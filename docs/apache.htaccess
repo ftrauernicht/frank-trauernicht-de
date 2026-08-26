@@ -11,7 +11,7 @@ Options -Indexes
   Header always set Cross-Origin-Opener-Policy "same-origin"
   Header always set Cross-Origin-Resource-Policy "same-site"
   Header always set X-Moin "Moin."
-  <FilesMatch "^(og-image\.png|favicon\.svg|apple-touch-icon\.png)$">
+  <FilesMatch "^(og-image\.png|og-image-en\.png|favicon\.svg|apple-touch-icon\.png)$">
     Header always set Cross-Origin-Resource-Policy "cross-origin"
   </FilesMatch>
 </IfModule>

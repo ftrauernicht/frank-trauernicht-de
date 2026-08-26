@@ -67,7 +67,7 @@
       ]
     },
     {
-      "source": "/(og-image.png|favicon.svg|apple-touch-icon.png)",
+      "source": "/(og-image.png|og-image-en.png|favicon.svg|apple-touch-icon.png)",
       "headers": [
         {
           "key": "Cross-Origin-Resource-Policy",

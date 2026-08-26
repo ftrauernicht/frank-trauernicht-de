@@ -15,6 +15,9 @@
 /og-image.png
   Cross-Origin-Resource-Policy: cross-origin
 
+/og-image-en.png
+  Cross-Origin-Resource-Policy: cross-origin
+
 /favicon.svg
   Cross-Origin-Resource-Policy: cross-origin
 
