@@ -63,6 +63,19 @@ Cache. Das Impressum fuehrt bewusst keine Anschrift; ein Cache-Listing haette si
 Diese Regel gilt ohne Ausnahme und ohne Diskussion — auch dann, wenn eine Ergaenzung nur
 gutgemeint waere.
 
+## Header: zwei Entscheidungen, die nicht zurueckgedreht werden sollen
+
+**Kein `Cross-Origin-Embedder-Policy`.** Er steht auf jeder Haerteliste, dient aber
+ausschliesslich dazu, Cross-Origin-Isolation fuer `SharedArrayBuffer` und hochaufloesende
+Timer freizuschalten. Diese Seite liefert kein JavaScript aus und braucht beides nicht. Der
+Header verschaerft nur die Regeln fuer jede Ressource und bringt Browser-Erweiterungen zum
+Melden. Wer ihn wieder setzt, handelt sich Fehler ein und gewinnt nichts.
+
+**`Cross-Origin-Resource-Policy: same-site`, nicht `same-origin`.** `frank-trauernicht.de`
+und `www.frank-trauernicht.de` sind verschiedene Origins, aber dieselbe Site. Mit
+`same-origin` blockieren sie einander. Vorschaubild und Symbole tragen zusaetzlich
+`cross-origin`, sonst holen Linkvorschauen sie nicht.
+
 ## Texte ändern
 
 Sämtlicher Fließtext liegt in `src/content/de.ts` und `src/content/en.ts`. Die Seiten
