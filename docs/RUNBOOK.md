@@ -9,23 +9,39 @@
 | Mail | Exchange Online, Tenant `<tenant>` |
 | Alter Webserver | eigener vServer |
 | Neues Hosting | Vercel, statisch |
+| Repository | https://github.com/ftrauernicht/frank-trauernicht-de (oeffentlich) |
 
 Hosting und DNS sind **zwei getrennte Entscheidungen**. Der Umzug auf Vercel braucht
 nur einen A-Record; das DNS kann vorerst bei Microsoft bleiben.
 
 ## Livegang auf Vercel
 
-1. Repository auf GitHub anlegen, Vercel-Projekt damit verbinden. Kein Adapter, keine
-   Functions, keine Bildoptimierung von Vercel — das Output muss statisch bleiben,
-   sonst ist der Wechsel kein A-Record mehr.
-2. Im Vercel-Projekt die Domain `frank-trauernicht.de` und `www.frank-trauernicht.de`
-   eintragen.
-3. **TTL des bestehenden A-Records auf 300 senken und einen Tag warten.**
-4. A-Record im Microsoft-365-Verwaltungsportal auf die von Vercel genannte Adresse
-   umstellen, `www` als CNAME auf `cname.vercel-dns.com`.
-5. Zertifikat abwarten, dann `docs/PRUEFLISTE.md` abarbeiten.
-6. Erst danach den alten Apache abschalten. Vorher dort in jedem Fall
-   `Options -Indexes` setzen — das Directory-Listing ist derzeit offen.
+**Erledigt:** Repository angelegt, `main` geschuetzt, CI gruen.
+
+1. Auf vercel.com mit dem GitHub-Konto `ftrauernicht` anmelden und
+   `frank-trauernicht-de` importieren. Astro wird erkannt; Build `npm run build`,
+   Ausgabe `dist`. **Nichts umstellen** — kein Adapter, keine Functions, keine
+   Bildoptimierung von Vercel. Das Output muss statisch bleiben, sonst ist der
+   Wechsel spaeter kein A-Record mehr.
+2. Erster Deploy landet auf `*.vercel.app`. Dort `docs/PRUEFLISTE.md` einmal
+   durchgehen, solange die Domain noch am alten Apache haengt — Fehler faellt man
+   so ohne Ausfall auf.
+3. Im Vercel-Projekt unter *Settings → Domains* `frank-trauernicht.de` und
+   `www.frank-trauernicht.de` eintragen. Vercel nennt dort die konkreten Werte;
+   **die aus dem Dashboard nehmen, nicht aus dem Gedaechtnis** — die Apex-Adresse
+   hat sich schon geaendert.
+4. **TTL des bestehenden A-Records auf 300 senken und einen Tag warten.** Das
+   Microsoft-365-Portal erlaubt nicht ueberall freie TTL; geht es nicht, mit bis
+   zu einer Stunde Umschaltzeit rechnen.
+5. A-Record im Microsoft-365-Verwaltungsportal auf den von Vercel genannten Wert
+   umstellen, `www` als CNAME auf den dort genannten Zielnamen.
+6. Zertifikat abwarten, dann Pruefliste ein zweites Mal — diesmal gegen die eigene
+   Domain, inklusive `curl -I` fuer die Header und `X-Moin`.
+7. Erst danach den alten Apache abschalten. Vorher dort in jedem Fall
+   `Options -Indexes` setzen — falls Directory-Indexing aktiv ist.
+8. Nach dem Livegang: Website-Feld im GitHub-Profil und im Repository setzen,
+   dazu LinkedIn und XING. Vorher nicht — solange die Domain den Apache zeigt,
+   schadet der Verweis mehr, als er nutzt.
 
 **TTL dauerhaft auf 300 lassen.** Ein Umzug ist dann in fünf Minuten sichtbar.
 
@@ -70,9 +86,28 @@ die Einwilligungsfreiheit der Seite steht zur Diskussion.
 
 ## Sofort, unabhängig vom Hosting
 
-- **DMARC** anlegen: `_dmarc` TXT `v=DMARC1; p=none; rua=mailto:mail@frank-trauernicht.de`
-  Nach einigen Wochen Auswertung auf `p=quarantine`, dann `p=reject`.
-- **DKIM** in Exchange Online aktivieren und die beiden Selector-CNAMEs setzen.
+- **DMARC** anlegen, Name `_dmarc`, Typ TXT:
+
+  ```
+  v=DMARC1; p=none; rua=mailto:mail@frank-trauernicht.de; fo=1
+  ```
+
+  `p=none` beobachtet nur. Nach einigen Wochen Berichten auf `p=quarantine`, dann
+  `p=reject`. Nicht abkuerzen: Wer sofort auf `reject` geht und eine legitime
+  Versandquelle uebersieht, verliert Mail ohne es zu merken.
+
+- **DKIM** im Microsoft-Defender-Portal aktivieren
+  (*Richtlinien → Bedrohungsrichtlinien → E-Mail-Authentifizierung → DKIM*).
+  Es braucht zwei CNAMEs nach diesem Muster:
+
+  ```
+  selector1._domainkey  ->  selector1-frank-trauernicht-de._domainkey.<tenant>.onmicrosoft.com
+  selector2._domainkey  ->  selector2-frank-trauernicht-de._domainkey.<tenant>.onmicrosoft.com
+  ```
+
+  **Die genauen Ziele stehen im Portal** — dort ablesen, nicht abtippen. Da die
+  Zone ohnehin bei Microsoft liegt, legt das Portal die Eintraege in vielen Faellen
+  selbst an.
 
 Beides sind reine TXT- beziehungsweise CNAME-Einträge und funktionieren auch im
 Microsoft-DNS. **DNSSEC und CAA gehen dort nicht** — die setzen den Umzug voraus.
