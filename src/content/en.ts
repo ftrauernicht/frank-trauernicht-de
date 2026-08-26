@@ -97,7 +97,8 @@ export const en: Content = {
       id: 'teaching',
       heading: 'Learning and passing it on',
       paragraphs: [
-        'I did a three-year apprenticeship and deliberately chose not to go to university. I wanted to be able to do things rather than hear about them for years — and little has changed: what I need, I learn on the thing itself.',
+        'After my Abitur — the German university-entrance qualification — I deliberately chose a three-year apprenticeship over a degree. I wanted to be able to do things rather than hear about them for years, and little has changed: what I need, I learn on the thing itself.',
+        'I have trained apprentices almost continuously ever since: more than twelve of them over the years, several finishing top of their year and honoured at the graduation ceremony in Leer. Of everything I have done professionally, that is the part with the longest half-life.',
         'It goes back out where it fits. A fork of exam material for the German software developer qualification has grown into a body of material of my own: chapters, diagrams, exam questions and cheat sheets, in German and English. Alongside it, a project-based JavaScript course for people who are just starting.',
       ],
     },

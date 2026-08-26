@@ -7,6 +7,10 @@ interface Props {
 
 const { content } = Astro.props;
 const { hero, sections, career, repos, contact } = content;
+
+const num = (i: number) => String(i + 1).padStart(2, '0');
+const careerIndex = sections.length;
+const reposIndex = sections.length + 1;
 ---
 
 <header class="wrap">
@@ -24,8 +28,8 @@ const { hero, sections, career, repos, contact } = content;
       <img
         src="/frank-trauernicht.jpg"
         alt={hero.photoAlt}
-        width="640"
-        height="800"
+        width="800"
+        height="1000"
         fetchpriority="high"
         decoding="async"
       />
@@ -36,29 +40,40 @@ const { hero, sections, career, repos, contact } = content;
 <main id="main">
   <div class="wrap">
     {
-      sections.map((section) => (
+      sections.map((section, i) => (
         <section class="section" id={section.id} aria-labelledby={`h-${section.id}`}>
-          <h2 class="section__heading" id={`h-${section.id}`}>
-            {section.heading}
-          </h2>
-          {section.paragraphs.map((p) => (
-            <p>{p}</p>
-          ))}
-          {section.listIntro && <p class="list-intro">{section.listIntro}</p>}
-          {section.list && (
-            <ul class="work-list">
-              {section.list.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          )}
-          {section.afterList?.map((p) => <p>{p}</p>)}
+          <div class="section__head">
+            <span class="section__eyebrow" aria-hidden="true">
+              {num(i)}
+            </span>
+            <h2 class="section__heading" id={`h-${section.id}`}>
+              {section.heading}
+            </h2>
+          </div>
+          <div class="section__body">
+            {section.paragraphs.map((p) => (
+              <p>{p}</p>
+            ))}
+            {section.listIntro && <p class="list-intro">{section.listIntro}</p>}
+            {section.list && (
+              <ul class="work-grid">
+                {section.list.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+            {section.afterList?.map((p) => <p>{p}</p>)}
+          </div>
         </section>
       ))
     }
 
     <section class="section" id="werdegang" aria-labelledby="h-werdegang">
-      <h2 class="section__heading" id="h-werdegang">{career.heading}</h2>
+      <div class="section__head">
+        <span class="section__eyebrow" aria-hidden="true">{num(careerIndex)}</span>
+        <h2 class="section__heading" id="h-werdegang">{career.heading}</h2>
+      </div>
+      <div class="section__body">
       <ol class="career">
         {
           career.stations.map((station) => (
@@ -80,10 +95,15 @@ const { hero, sections, career, repos, contact } = content;
           ))
         }
       </ol>
+      </div>
     </section>
 
     <section class="section" id="repositories" aria-labelledby="h-repositories">
-      <h2 class="section__heading" id="h-repositories">{repos.heading}</h2>
+      <div class="section__head">
+        <span class="section__eyebrow" aria-hidden="true">{num(reposIndex)}</span>
+        <h2 class="section__heading" id="h-repositories">{repos.heading}</h2>
+      </div>
+      <div class="section__body">
       {repos.intro.map((p) => <p>{p}</p>)}
       <ul class="repos">
         {
@@ -97,17 +117,16 @@ const { hero, sections, career, repos, contact } = content;
           ))
         }
       </ul>
+      </div>
     </section>
 
-    <section class="section" id="kontakt" aria-labelledby="h-kontakt">
+    <section class="section section--contact" id="kontakt" aria-labelledby="h-kontakt">
       <h2 class="section__heading" id="h-kontakt">{contact.heading}</h2>
       {contact.paragraphs.map((p) => <p>{p}</p>)}
-      <p class="contact-lines">
-        <span class="contact-mail">
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>
-        </span>
+      <p>
+        <a class="contact-mail" href={`mailto:${contact.email}`}>{contact.email}</a>
       </p>
-      <p class="contact-lines">
+      <div class="profiles">
         {
           contact.profiles.map((profile) => (
             <a href={profile.url} rel="me noopener">
@@ -115,7 +134,7 @@ const { hero, sections, career, repos, contact } = content;
             </a>
           ))
         }
-      </p>
+      </div>
     </section>
   </div>
 </main>

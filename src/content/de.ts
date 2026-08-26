@@ -97,7 +97,8 @@ export const de: Content = {
       id: 'lernen',
       heading: 'Lernen und weitergeben',
       paragraphs: [
-        'Ich habe eine dreijährige Ausbildung gemacht und mich bewusst gegen ein Studium entschieden. Ich wollte Dinge können, nicht jahrelang über sie hören — daran hat sich wenig geändert: Was ich brauche, lerne ich am Gegenstand.',
+        'Nach dem Abitur habe ich mich bewusst gegen ein Studium entschieden und eine dreijährige Ausbildung gemacht. Ich wollte Dinge können, nicht jahrelang über sie hören — daran hat sich wenig geändert: Was ich brauche, lerne ich am Gegenstand.',
+        'Ausgebildet habe ich seither fast durchgehend selbst: über zwölf Auszubildende in den vergangenen Jahren, mehrere von ihnen Jahrgangsbeste und bei der Freisprechung in Leer ausgezeichnet. Von den Dingen, die ich beruflich gemacht habe, ist das der Teil, der am längsten nachwirkt.',
         'Zurück geht es dahin, wo es passt. Aus einem Fork mit Prüfungsmaterial für die Fachinformatiker Anwendungsentwicklung ist bei mir eine eigene Themensammlung geworden: Kapitel, Diagramme, Prüfungsfragen und Spickzettel, deutsch und englisch. Dazu ein projektbasierter JavaScript-Kurs für Leute, die gerade anfangen.',
       ],
     },
