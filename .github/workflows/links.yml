@@ -1,0 +1,19 @@
+# Externe Verweise rotten. Bewusst getrennt von der CI, damit ein flackernder
+# Fremddienst nicht die Commits rot faerbt.
+
+name: Verweise
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extern:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: bash scripts/check-links.sh

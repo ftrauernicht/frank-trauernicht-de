@@ -1,0 +1,32 @@
+# Baut die Seite einmal im Monat neu, ohne dass sich etwas geaendert hat.
+#
+# Klingt sinnlos, ist es nicht: Zwei Angaben werden zur Bauzeit errechnet — wie
+# viele Jahre C# und .NET, und das Ablaufdatum der security.txt. Ohne
+# regelmaessigen Bau frieren beide ein, und die security.txt wird nach RFC 9116
+# irgendwann ungueltig.
+
+name: Auffrischen
+
+on:
+  schedule:
+    - cron: '0 5 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-hook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vercel-Build ausloesen
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::Secret VERCEL_DEPLOY_HOOK fehlt."
+            exit 1
+          fi
+          code="$(curl -sS -o /dev/null -w '%{http_code}' -X POST "$HOOK")"
+          echo "Deploy Hook antwortete mit HTTP $code"
+          case "$code" in 2*) ;; *) exit 1 ;; esac

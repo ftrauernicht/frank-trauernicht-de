@@ -1,4 +1,5 @@
 import type { Content } from './types';
+import { jahreDe } from './facts';
 
 export const de: Content = {
   lang: 'de',
@@ -19,7 +20,7 @@ export const de: Content = {
     role: 'Senior Software Engineer',
     facts: ['C# und .NET seit 2011', 'Ostfriesland, remote'],
     lead: [
-      'Ich baue seit fünfzehn Jahren Software in C# und .NET. Meistens dort, wo schon etwas läuft, das weiterlaufen soll: gewachsene Systeme, große Datenmengen, Umgebungen mit Auflagen.',
+      `Ich baue seit ${jahreDe} Jahren Software in C# und .NET. Meistens dort, wo schon etwas läuft, das weiterlaufen soll: gewachsene Systeme, große Datenmengen, Umgebungen mit Auflagen.`,
     ],
     photoAlt: 'Frank Trauernicht',
   },
@@ -37,7 +38,7 @@ export const de: Content = {
       id: 'arbeit',
       heading: 'Die Fachlichkeit wechselt, die Probleme wiederholen sich',
       paragraphs: [
-        'In fünfzehn Jahren bin ich durch sehr verschiedene Branchen gekommen. Was sich ändert, ist die Domäne. Was sich wiederholt, sind die Probleme: große Datenmengen, die verlässlich verarbeitet werden müssen. Gewachsene Systeme, die weiterleben sollen. Planung und Disposition. Und fast immer eine Schnittstelle, die so nirgends dokumentiert ist.',
+        `In ${jahreDe} Jahren bin ich durch sehr verschiedene Branchen gekommen. Was sich ändert, ist die Domäne. Was sich wiederholt, sind die Probleme: große Datenmengen, die verlässlich verarbeitet werden müssen. Gewachsene Systeme, die weiterleben sollen. Planung und Disposition. Und fast immer eine Schnittstelle, die so nirgends dokumentiert ist.`,
       ],
       listIntro: 'Einiges davon, ohne Namen:',
       list: [

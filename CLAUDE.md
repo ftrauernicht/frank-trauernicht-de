@@ -84,6 +84,39 @@ Ruecknahme dauert Monate. Fuer eine oeffentliche Visitenkarte ohne Anmeldung und
 Daten ist der Gewinn praktisch null — er greift nur beim allerersten Aufruf in einem
 fabrikneuen Browser. `includeSubDomains` bleibt: Das ist reversibel, `preload` nicht.
 
+## Angaben, die veralten
+
+Zwei Werte werden **zur Bauzeit** errechnet, nicht im Browser — die CSP verbietet
+JavaScript, und der Browser soll auch nichts rechnen muessen:
+
+- die Jahre mit C# und .NET, aus `src/content/facts.ts`, als Zahlwort in beiden Sprachen
+- das `Expires` der `security.txt`, ueber die Integration in `astro.config.mjs`,
+  immer Bauzeit plus ein Jahr
+
+Damit das etwas nuetzt, muss regelmaessig gebaut werden. Dafuer sorgt
+`.github/workflows/refresh.yml` einmal im Monat ueber einen Vercel Deploy Hook.
+**Wer den Workflow entfernt, friert beide Werte ein** — und die `security.txt` wird
+nach RFC 9116 irgendwann ungueltig, nicht bloss alt.
+
+Das Datum unter „Stand" in der Datenschutzerklaerung bleibt bewusst von Hand. Es
+automatisch auf das Baudatum zu setzen wuerde behaupten, der Text habe sich geaendert.
+
+## Was die Werkzeuge pruefen
+
+| Workflow | Wann | Wofuer |
+|---|---|---|
+| `ci.yml` | jeder Push | Build, Typen, kein fremder Host, kein Skript, `npm audit` |
+| `smoke.yml` | Push, montags | die **ausgelieferte** Seite: Header, Cookies, Weiterleitungen, Kette, `security.txt` |
+| `lighthouse.yml` | Push, montags | vier Kategorien gegen `lighthouse-budget.json` |
+| `links.yml` | montags | externe Verweise |
+| `refresh.yml` | monatlich | Neubau, damit die Bauzeit-Werte frisch bleiben |
+
+`smoke.yml` ist der wichtigste. Er prueft, was **nicht im Repository steht** — die
+Einstellungen beim Anbieter. Genau dort war beim Livegang der Fehler.
+
+Actions sind auf Commit-SHA gepinnt, Dependabot hebt sie samt Kommentar an.
+**SHAs nie raten**, immer aus der API holen.
+
 ## Texte ändern
 
 Sämtlicher Fließtext liegt in `src/content/de.ts` und `src/content/en.ts`. Die Seiten

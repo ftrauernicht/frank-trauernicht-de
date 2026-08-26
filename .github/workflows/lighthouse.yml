@@ -1,0 +1,53 @@
+# Misst die ausgelieferte Seite gegen feste Untergrenzen.
+#
+# Kann Regressionen nicht verhindern — Vercel baut bei jedem Push, unabhaengig
+# von dieser Pruefung. Aber es faellt am selben Tag auf statt beim naechsten Mal,
+# wenn jemand zufaellig nachmisst. Der Kontrastfehler in der Rollen-Plakette
+# waere hier aufgeschlagen.
+
+name: Lighthouse
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse
+  cancel-in-progress: true
+
+jobs:
+  messen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+
+      - name: Auf den Deploy warten
+        if: github.event_name == 'push'
+        run: sleep 75
+
+      - name: Messen
+        run: |
+          npx --yes lighthouse@12 https://frank-trauernicht.de/ \
+            --output=json --output-path=./lighthouse.json \
+            --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --form-factor=mobile --quiet
+
+      - name: Gegen die Untergrenzen pruefen
+        run: node scripts/lighthouse-budget.mjs lighthouse.json
+
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        if: always()
+        with:
+          name: lighthouse-bericht
+          path: lighthouse.json
+          retention-days: 14

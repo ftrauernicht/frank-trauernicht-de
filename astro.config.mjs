@@ -14,6 +14,37 @@ const PAARE = {
   '/en/privacy/': ['/datenschutz/', '/en/privacy/'],
 };
 
+
+/**
+ * Erzeugt /.well-known/security.txt beim Bauen. Als statische Datei im
+ * oeffentlichen Verzeichnis lief das Ablaufdatum irgendwann ab, ohne dass es
+ * jemandem auffiel — nach RFC 9116 ist die Datei dann ungueltig, nicht bloss alt.
+ * Hier steht es immer auf Bauzeit plus ein Jahr.
+ */
+function securityTxt() {
+  return {
+    name: 'security-txt',
+    hooks: {
+      'astro:build:done': async ({ dir, logger }) => {
+        const { mkdir, writeFile } = await import('node:fs/promises');
+        const ablauf = new Date();
+        ablauf.setUTCFullYear(ablauf.getUTCFullYear() + 1);
+        const inhalt = [
+          `Contact: mailto:mail@frank-trauernicht.de`,
+          `Expires: ${ablauf.toISOString().replace(/\.\d{3}Z$/, '.000Z')}`,
+          `Preferred-Languages: de, en`,
+          `Canonical: ${SITE}/.well-known/security.txt`,
+          '',
+        ].join('\n');
+        const ziel = new URL('./.well-known/', dir);
+        await mkdir(ziel, { recursive: true });
+        await writeFile(new URL('./security.txt', ziel), inhalt, 'utf-8');
+        logger.info(`security.txt erzeugt, gueltig bis ${ablauf.toISOString().slice(0, 10)}`);
+      },
+    },
+  };
+}
+
 export default defineConfig({
   site: SITE,
   output: 'static',
@@ -51,6 +82,7 @@ export default defineConfig({
         return item;
       },
     }),
+    securityTxt(),
   ],
   devToolbar: { enabled: false },
 });

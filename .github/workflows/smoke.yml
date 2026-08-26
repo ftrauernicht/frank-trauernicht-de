@@ -1,0 +1,44 @@
+# Prueft die ausgelieferte Seite, nicht den Auslieferungsstand.
+#
+# Ein Teil dessen, was diese Seite ausmacht, steht nicht im Repository, sondern
+# in den Einstellungen des Anbieters: welche Domain primaer ist, ob Header
+# ankommen, ob Weiterleitungen dauerhaft sind. Beim Livegang war genau dort ein
+# Fehler, den kein Test im Repo haette finden koennen.
+
+name: Rauchtest
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rauchtest
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Auf den Deploy warten
+        if: github.event_name == 'push'
+        run: sleep 75
+
+      - name: Rauchtest
+        run: |
+          # Nach einem Push kann der Deploy noch laufen. Bis zu drei Anlaeufe,
+          # danach ist es kein Timing-Problem mehr.
+          for versuch in 1 2 3; do
+            if bash scripts/smoke.sh; then exit 0; fi
+            echo "::notice::Anlauf $versuch fehlgeschlagen, warte 45 s"
+            sleep 45
+          done
+          echo "::error::Der Rauchtest ist dreimal fehlgeschlagen."
+          exit 1

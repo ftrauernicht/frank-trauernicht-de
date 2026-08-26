@@ -1,4 +1,5 @@
 import type { Content } from './types';
+import { jahreEn, jahreEnGross } from './facts';
 
 export const en: Content = {
   lang: 'en',
@@ -19,7 +20,7 @@ export const en: Content = {
     role: 'Senior Software Engineer',
     facts: ['C# and .NET since 2011', 'East Frisia, Germany — remote'],
     lead: [
-      'I have been building software in C# and .NET for fifteen years. Mostly where something is already running and is meant to keep running: long-lived systems, large volumes of data, environments with constraints.',
+      `I have been building software in C# and .NET for ${jahreEn} years. Mostly where something is already running and is meant to keep running: long-lived systems, large volumes of data, environments with constraints.`,
     ],
     photoAlt: 'Frank Trauernicht',
   },
@@ -37,7 +38,7 @@ export const en: Content = {
       id: 'work',
       heading: 'The domain changes, the problems repeat',
       paragraphs: [
-        'Fifteen years took me through very different industries. What changes is the subject matter. What repeats are the problems: large volumes of data that have to be processed reliably. Long-lived systems that are meant to keep living. Planning and scheduling. And, almost always, an interface that is documented nowhere.',
+        `${jahreEnGross} years took me through very different industries. What changes is the subject matter. What repeats are the problems: large volumes of data that have to be processed reliably. Long-lived systems that are meant to keep living. Planning and scheduling. And, almost always, an interface that is documented nowhere.`,
       ],
       listIntro: 'Some of it, without names:',
       list: [

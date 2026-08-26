@@ -1,0 +1,7 @@
+{
+  "_kommentar": "Untergrenzen je Kategorie, 0 bis 100. Werte hier anheben, sobald die Seite sie stabil erreicht — Lighthouse schwankt auf geteilten Runnern um ein bis zwei Punkte, deshalb steht die Leistung bewusst unter dem gemessenen Wert.",
+  "performance": 90,
+  "accessibility": 95,
+  "best-practices": 95,
+  "seo": 95
+}
