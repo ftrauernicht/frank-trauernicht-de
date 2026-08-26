@@ -7,7 +7,7 @@ Abzuhaken gegen die Produktionsdomain, nicht gegen `localhost`.
 - [ ] securityheaders.com — **A+**
 - [ ] Mozilla Observatory — **A+**
 - [ ] SSL Labs — **A+**, TLS 1.3, kein TLS 1.0/1.1
-- [ ] HSTS bei hstspreload.org eingereicht
+- [ ] HSTS ohne `preload` — bewusst nicht eingereicht, siehe CLAUDE.md
 - [ ] `Content-Security-Policy` greift, Browser-Konsole ohne Verstoß
 - [ ] JSON-LD wird trotz `script-src 'none'` ausgeliefert und nicht blockiert
       (Datenblöcke mit `application/ld+json` sind kein ausführbares Skript —

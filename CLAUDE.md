@@ -76,6 +76,14 @@ und `www.frank-trauernicht.de` sind verschiedene Origins, aber dieselbe Site. Mi
 `same-origin` blockieren sie einander. Vorschaubild und Symbole tragen zusaetzlich
 `cross-origin`, sonst holen Linkvorschauen sie nicht.
 
+
+**Kein `preload` im HSTS-Header.** Das Schluesselwort gilt als Einwilligung: Solange es
+dort steht, kann **jeder Dritte** die Domain bei hstspreload.org einreichen. Die Aufnahme
+bindet dann die ganze Domain samt aller Unterdomaenen dauerhaft an HTTPS, und eine
+Ruecknahme dauert Monate. Fuer eine oeffentliche Visitenkarte ohne Anmeldung und ohne
+Daten ist der Gewinn praktisch null — er greift nur beim allerersten Aufruf in einem
+fabrikneuen Browser. `includeSubDomains` bleibt: Das ist reversibel, `preload` nicht.
+
 ## Texte ändern
 
 Sämtlicher Fließtext liegt in `src/content/de.ts` und `src/content/en.ts`. Die Seiten
