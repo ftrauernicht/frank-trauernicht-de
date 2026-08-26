@@ -1,0 +1,236 @@
+---
+import Base from '../layouts/Base.astro';
+import { de } from '../content/de';
+
+const title = 'FT-01 — Gefunden';
+
+// Hinweise sind beim Geocaching seit jeher ROT13. Hier zur Sicherheit im Code
+// erzeugt, damit im Klartext nichts danebengeht.
+const rot13 = (s: string) =>
+  s.replace(/[a-z]/gi, (c) => {
+    const base = c <= 'Z' ? 65 : 97;
+    return String.fromCharCode(((c.charCodeAt(0) - base + 13) % 26) + base);
+  });
+
+const hintPlain = 'Du stehst drauf. Wie immer.';
+const hint = rot13(hintPlain);
+
+const logMail =
+  'mailto:mail@frank-trauernicht.de' +
+  '?subject=' +
+  encodeURIComponent('Logbuch FT-01') +
+  '&body=' +
+  encodeURIComponent('Gefunden. \n\nWeg hierher: \nAnmerkung: \n\nGruß\n');
+
+const listing = [
+  ['Koordinaten', 'N 00° 00.000′  E 000° 00.000′'],
+  ['Größe', 'Micro'],
+  ['Difficulty', '3,5 — drei Stationen, keine davon verlinkt'],
+  ['Terrain', '1,0 — du hast den Stuhl nicht verlassen'],
+  ['Gelegt', 'August 2026'],
+];
+
+const attributes = [
+  'kein JavaScript',
+  'keine Cookies',
+  'ganzjährig',
+  'nachts zugänglich',
+  'keine Taschenlampe nötig',
+];
+---
+
+<Base
+  content={de}
+  path="/cache/"
+  altPath="/cache/"
+  title={title}
+  description="Gefunden."
+  noindex
+>
+  <main id="main" class="wrap">
+    <article class="legal cache">
+      <p class="cache__code">FT-01 · Virtueller Cache</p>
+      <h1>Gefunden.</h1>
+
+      <p>
+        Ein Antwort-Header, eine <a href="/humans.txt">humans.txt</a> und ein Kommentar im
+        Quelltext. Das ist mehr Neugier, als eine Visitenkarte verdient hat — und genau die Sorte
+        Neugier, wegen der ich diesen Beruf mag.
+      </p>
+
+      <dl class="cache__listing">
+        {
+          listing.map(([label, value]) => (
+            <>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </>
+          ))
+        }
+      </dl>
+
+      <p class="cache__aside">
+        Null Island, der Punkt bei null Grad Nord und null Grad Ost. Dort landet alles, was in der
+        Geodatenverarbeitung schiefgeht — und ein Cache, der keinen Ort hat, ist dort so richtig
+        aufgehoben wie nirgends sonst.
+      </p>
+
+      <ul class="cache__attrs">
+        {attributes.map((a) => <li>{a}</li>)}
+      </ul>
+
+      <details class="cache__details">
+        <summary>Hinweis anzeigen</summary>
+        <p class="cache__rot"><code>{hint}</code></p>
+        <details>
+          <summary>Ich kann kein ROT13</summary>
+          <p class="cache__rot">
+            <code>echo '{hint}' | tr 'A-Za-z' 'N-ZA-Mn-za-m'</code>
+          </p>
+          <p>{hintPlain}</p>
+        </details>
+      </details>
+
+      <h2>Logbuch</h2>
+      <p>
+        Kein Server, keine Datenbank, kein Formular — es gibt hier buchstäblich nichts, wo ein
+        Eintrag hinkönnte. Das Logbuch ist also mein Postfach, und das ist mir ohnehin lieber.
+      </p>
+      <p>
+        <a class="cache__log" href={logMail}>Ins Logbuch eintragen</a>
+      </p>
+
+      <h2>Und der echte</h2>
+      <p>
+        Den gibt es auch, aus richtigem Plastik: ein PETLing an einer Bank. Wo er liegt, sage ich
+        dir, wenn du dich einträgst — das ist der Teil, den ich lieber persönlich verrate als
+        öffentlich.
+      </p>
+
+      <p class="cache__en" lang="en">
+        You worked your way here through a response header, a humans.txt and a source comment.
+        Nothing is logged, nothing is measured — so if you want this find on the record, the
+        logbook above is an email.
+      </p>
+
+      <a class="back-home" href="/">Zurück zur Startseite</a>
+    </article>
+  </main>
+</Base>
+
+<style>
+  .cache__code {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+
+  .cache__listing {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 0.4rem 1.25rem;
+    margin: 2rem 0 1rem;
+    padding: 1.25rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 3px;
+    background: var(--bg-sunk);
+    font-size: 0.9375rem;
+  }
+
+  .cache__listing dt {
+    color: var(--text-muted);
+  }
+
+  .cache__listing dd {
+    margin: 0;
+    font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Menlo, monospace;
+    font-size: 0.875rem;
+  }
+
+  .cache__aside {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+
+  .cache__attrs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+  }
+
+  .cache__attrs li {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--rule);
+    border-radius: 2rem;
+    padding: 0.3rem 0.75rem;
+    margin: 0;
+  }
+
+  .cache__details {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 2rem;
+    background: var(--bg-card);
+  }
+
+  .cache__details summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .cache__details details {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .cache__details p {
+    margin: 0.75rem 0 0;
+  }
+
+  .cache__rot code {
+    font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Menlo, monospace;
+    font-size: 0.8125rem;
+    background: var(--bg-sunk);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 0.2rem 0.45rem;
+    overflow-wrap: anywhere;
+  }
+
+  .cache__log {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 2rem;
+    padding: 0.5rem 1.15rem;
+    text-decoration: none;
+  }
+
+  .cache__log:hover,
+  .cache__log:focus-visible {
+    color: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+
+  .cache__en {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+    margin-top: 2rem;
+  }
+</style>

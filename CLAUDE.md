@@ -42,6 +42,18 @@ das eine bewusste Entscheidung und keine Nebenwirkung.
   bewusste Entscheidung. Die persönlichen Hintergründe gehören in keinen Text.
 - Keine Sprachniveaus (B2 und dergleichen) — die gehören in den Lebenslauf.
 
+## Das Versteck
+
+Die Kette lautet: Antwort-Header `X-Moin` → `humans.txt` → Quelltextkommentar im `<body>` →
+`/cache/`. Wer eine Stufe entfernt, zerreisst sie.
+
+`/cache/` traegt `noindex` und ist per `filter` aus der Sitemap ausgenommen. **Nicht** in die
+`robots.txt` aufnehmen — ein `Disallow` verraet den Pfad an jeden, der die Datei aufruft.
+
+Der echte Geocache existiert; sein Ort gehoert nirgendwohin. Auf /cache/ steht **kein Ort, kein
+GC-Code und keine Koordinate** — das Impressum fuehrt bewusst keine Anschrift, und ein
+Cache-Listing haette genau die geliefert.
+
 ## Texte ändern
 
 Sämtlicher Fließtext liegt in `src/content/de.ts` und `src/content/en.ts`. Die Seiten

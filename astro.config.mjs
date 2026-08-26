@@ -23,6 +23,9 @@ export default defineConfig({
   integrations: [
     sitemap({
       i18n: { defaultLocale: 'de', locales: { de: 'de-DE', en: 'en' } },
+      // Das Versteck gehoert nicht in die Sitemap. Und ausdruecklich nicht in die
+      // robots.txt: ein Disallow verraet den Pfad an jeden, der die Datei aufruft.
+      filter: (page) => !page.includes('/cache/'),
     }),
   ],
   devToolbar: { enabled: false },

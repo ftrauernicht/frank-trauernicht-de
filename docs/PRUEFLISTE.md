@@ -24,6 +24,8 @@ Abzuhaken gegen die Produktionsdomain, nicht gegen `localhost`.
       beim Anbieter, nicht im lokalen `astro preview`
 - [ ] `/humans.txt` erreichbar, `rel="author"` im Kopf verweist darauf
 - [ ] Eine erfundene URL liefert die eigene 404-Seite, nicht die des Anbieters
+- [ ] `/cache/` traegt `noindex`, fehlt in Sitemap, robots.txt und llms.txt
+- [ ] Die Kette traegt: Header → humans.txt → Quelltext → /cache/
 
 ## Leistung und Zugänglichkeit
 
