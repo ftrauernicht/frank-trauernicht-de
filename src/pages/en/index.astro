@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import Profile from '../../components/Profile.astro';
+import { en } from '../../content/en';
+---
+
+<Base content={en} path="/en/" altPath="/" profileSchema>
+  <Profile content={en} />
+</Base>

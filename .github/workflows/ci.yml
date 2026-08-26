@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Actions auf Commit-SHA gepinnt: ein verschobener Tag darf hier nichts aendern.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+      - name: Keine fremden Hosts im Auslieferungsstand
+        run: |
+          if grep -rEo '(src|href)="https?://[^"]+"' dist --include='*.html' \
+             | grep -vE 'frank-trauernicht\.de|github\.com|linkedin\.com|xing\.com'; then
+            echo "Fremder Host im Markup gefunden — die Cookie-Freiheit haengt daran."
+            exit 1
+          fi
+      - name: Keine ausfuehrbaren Skripte im Auslieferungsstand
+        run: |
+          if grep -rEo '<script[^>]*>' dist --include='*.html' \
+             | grep -v 'application/ld+json'; then
+            echo "Skript-Tag gefunden — die CSP verbietet script-src."
+            exit 1
+          fi
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+      - run: npm audit --audit-level=high

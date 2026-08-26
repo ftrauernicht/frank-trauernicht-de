@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { de } from '../content/de';
+
+const title = 'Impressum — Frank Trauernicht';
+const description = 'Verantwortlich für den Inhalt dieser Seite und Kontaktmöglichkeit.';
+---
+
+<Base content={de} path="/impressum/" altPath="/en/imprint/" title={title} description={description}>
+  <main id="main" class="wrap">
+    <article class="legal">
+      <h1>Impressum</h1>
+
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p>
+        Frank Trauernicht<br />
+        Ostfriesland, Deutschland
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        <a href="mailto:mail@frank-trauernicht.de">mail@frank-trauernicht.de</a>
+      </p>
+
+      <h2>Art dieser Seite</h2>
+      <p>
+        Diese Seite ist eine private Selbstdarstellung. Sie bietet keine Waren und keine
+        Dienstleistungen an, enthält keine Werbung, keine Affiliate-Verweise und verfolgt keine
+        wirtschaftlichen Zwecke.
+      </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Die Inhalte dieser Seite werden mit Sorgfalt erstellt. Für ihre Richtigkeit, Vollständigkeit
+        und Aktualität kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich für
+        eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich, aber nicht
+        verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach
+        Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+      </p>
+
+      <h2>Haftung für Verweise</h2>
+      <p>
+        Diese Seite enthält Verweise auf externe Webseiten Dritter, auf deren Inhalte ich keinen
+        Einfluss habe. Für diese fremden Inhalte ist stets der jeweilige Anbieter verantwortlich.
+        Zum Zeitpunkt der Verlinkung waren keine rechtswidrigen Inhalte erkennbar. Werde ich auf
+        Rechtsverletzungen aufmerksam, entferne ich den Verweis umgehend.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die auf dieser Seite veröffentlichten Texte und das Porträtfoto unterliegen dem deutschen
+        Urheberrecht. Vervielfältigung, Bearbeitung und Verbreitung außerhalb der Grenzen des
+        Urheberrechts bedürfen meiner schriftlichen Zustimmung. Der Quelltext dieser Seite ist
+        öffentlich einsehbar; die dort hinterlegte Lizenz gilt für den Code, nicht für die Inhalte.
+      </p>
+
+      <a class="back-home" href="/">{de.legal.backHome}</a>
+    </article>
+  </main>
+</Base>

@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import { en } from '../../content/en';
+
+const title = 'Privacy — Frank Trauernicht';
+const description =
+  'What data is processed when you open this page. No cookies, no analytics, nothing loaded from third-party servers.';
+const asOf = 'August 2026';
+---
+
+<Base content={en} path="/en/privacy/" altPath="/datenschutz/" title={title} description={description}>
+  <main id="main" class="wrap">
+    <article class="legal">
+      <h1>Privacy</h1>
+
+      <p>
+        <em>
+          This is a courtesy translation. In case of doubt, the
+          <a href="/datenschutz/">German version</a> applies.
+        </em>
+      </p>
+
+      <h2>The short version</h2>
+      <p>
+        This site sets <strong>no cookies</strong>, stores nothing in your browser, uses
+        <strong>no analytics or audience measurement</strong>, and loads
+        <strong>nothing from third-party servers</strong> — not even fonts. There is no contact
+        form, no user account and no social media embedding. That is why there is no consent
+        dialogue either.
+      </p>
+
+      <h2>Controller</h2>
+      <p>
+        Frank Trauernicht, East Frisia, Germany<br />
+        <a href="mailto:mail@frank-trauernicht.de">mail@frank-trauernicht.de</a>
+      </p>
+
+      <h2>Access and server logs</h2>
+      <p>
+        Opening the page processes the technical data without which delivery would not be possible:
+        IP address, date and time of access, the file requested, volume transferred, status of the
+        request, referring page, and browser and operating system identification.
+      </p>
+      <p>
+        The legal basis is Art. 6(1)(f) GDPR. The legitimate interest lies in delivering the site
+        without fault and protecting it against misuse. This data is not combined with other
+        sources and is not evaluated for advertising purposes.
+      </p>
+
+      <h2>Hosting</h2>
+      <p>
+        The site is delivered by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA. Vercel
+        processes the access data described above on my behalf under a data processing agreement
+        pursuant to Art. 28 GDPR. Transfers to the United States rely on Vercel's certification
+        under the EU-U.S. Data Privacy Framework and, in addition, on the European Commission's
+        Standard Contractual Clauses pursuant to Art. 46 GDPR.
+      </p>
+
+      <h2>Fonts</h2>
+      <p>
+        The typefaces used here are served from the same server as the site itself. No connection
+        is made to Google Fonts or any other third-party provider.
+      </p>
+
+      <h2>Contact by email</h2>
+      <p>
+        If you write to me, I process what you send in order to answer your enquiry and any
+        follow-up to it. The legal basis is Art. 6(1)(f) GDPR, or Art. 6(1)(b) GDPR where the
+        enquiry relates to a contract. Mail is received through Microsoft 365 (Microsoft Ireland
+        Operations Limited). Your message is retained for as long as it is needed to deal with the
+        matter, or for as long as statutory retention periods require.
+      </p>
+
+      <h2>Your rights</h2>
+      <ul>
+        <li>Access to the data processed (Art. 15 GDPR)</li>
+        <li>Rectification of inaccurate data (Art. 16 GDPR)</li>
+        <li>Erasure (Art. 17 GDPR)</li>
+        <li>Restriction of processing (Art. 18 GDPR)</li>
+        <li>Data portability (Art. 20 GDPR)</li>
+        <li>Objection to processing (Art. 21 GDPR)</li>
+      </ul>
+      <p>
+        An informal message to the address above is enough to exercise any of these. You also have
+        the right to lodge a complaint with a supervisory authority; the authority responsible for
+        me is the Data Protection Commissioner of Lower Saxony.
+      </p>
+
+      <h2>As of</h2>
+      <p>{asOf}</p>
+
+      <a class="back-home" href="/en/">{en.legal.backHome}</a>
+    </article>
+  </main>
+</Base>

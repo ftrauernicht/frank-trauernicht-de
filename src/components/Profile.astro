@@ -1,0 +1,121 @@
+---
+import type { Content } from '../content/types';
+
+interface Props {
+  content: Content;
+}
+
+const { content } = Astro.props;
+const { hero, sections, career, repos, contact } = content;
+---
+
+<header class="wrap">
+  <div class="hero">
+    <div class="hero__intro">
+      <h1 class="hero__name">{hero.name}</h1>
+      <p class="hero__role">{hero.role}</p>
+      <ul class="hero__facts">
+        {hero.facts.map((fact) => <li>{fact}</li>)}
+      </ul>
+      {hero.lead.map((p) => <p class="hero__lead">{p}</p>)}
+    </div>
+
+    <div class="hero__portrait">
+      <img
+        src="/frank-trauernicht.jpg"
+        alt={hero.photoAlt}
+        width="640"
+        height="800"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    {
+      sections.map((section) => (
+        <section class="section" id={section.id} aria-labelledby={`h-${section.id}`}>
+          <h2 class="section__heading" id={`h-${section.id}`}>
+            {section.heading}
+          </h2>
+          {section.paragraphs.map((p) => (
+            <p>{p}</p>
+          ))}
+          {section.listIntro && <p class="list-intro">{section.listIntro}</p>}
+          {section.list && (
+            <ul class="work-list">
+              {section.list.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+          {section.afterList?.map((p) => <p>{p}</p>)}
+        </section>
+      ))
+    }
+
+    <section class="section" id="werdegang" aria-labelledby="h-werdegang">
+      <h2 class="section__heading" id="h-werdegang">{career.heading}</h2>
+      <ol class="career">
+        {
+          career.stations.map((station) => (
+            <li>
+              <div class="career__period">{station.period}</div>
+              <div>
+                <p class="career__role">
+                  {station.role}
+                  {station.org && (
+                    <>
+                      {' · '}
+                      <span class="career__org">{station.org}</span>
+                    </>
+                  )}
+                </p>
+                {station.note && <p class="career__note">{station.note}</p>}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="section" id="repositories" aria-labelledby="h-repositories">
+      <h2 class="section__heading" id="h-repositories">{repos.heading}</h2>
+      {repos.intro.map((p) => <p>{p}</p>)}
+      <ul class="repos">
+        {
+          repos.items.map((repo) => (
+            <li>
+              <a href={repo.url} rel="me noopener">
+                {repo.name}
+              </a>
+              <p>{repo.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="section" id="kontakt" aria-labelledby="h-kontakt">
+      <h2 class="section__heading" id="h-kontakt">{contact.heading}</h2>
+      {contact.paragraphs.map((p) => <p>{p}</p>)}
+      <p class="contact-lines">
+        <span class="contact-mail">
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        </span>
+      </p>
+      <p class="contact-lines">
+        {
+          contact.profiles.map((profile) => (
+            <a href={profile.url} rel="me noopener">
+              {profile.label}
+            </a>
+          ))
+        }
+      </p>
+    </section>
+  </div>
+</main>

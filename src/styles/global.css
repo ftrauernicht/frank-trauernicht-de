@@ -1,0 +1,499 @@
+/* ---------------------------------------------------------------------------
+   Grundlagen: Farben als Tokens. Die helle Palette steht auf blankem :root,
+   damit sie auch dann greift, wenn weder Media Query noch Attribut zutreffen.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --bg: #fbfaf7;
+  --bg-sunk: #f3f1ec;
+  --text: #1b1a17;
+  --text-muted: #6a665e;
+  --rule: #e2ded4;
+  --accent: #7d4f2e;
+  --accent-hover: #5e3a20;
+  --focus: #7d4f2e;
+
+  --font-display: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-text: 'IBM Plex Sans Variable', 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --measure: 36rem;
+  --page: 62rem;
+  --step: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15161a;
+    --bg-sunk: #1d1f24;
+    --text: #e9e6e0;
+    --text-muted: #a09b91;
+    --rule: #2f3138;
+    --accent: #d9a06a;
+    --accent-hover: #edb87f;
+    --focus: #d9a06a;
+
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.65;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+:where(a):focus-visible,
+:where(button):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: min(100% - 2.5rem, var(--page));
+  margin-inline: auto;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+/* --- Kopfzeile ------------------------------------------------------------- */
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  padding-block: 1.25rem 0;
+}
+
+.lang-switch {
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+}
+
+.lang-switch:hover,
+.lang-switch:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* --- Held ------------------------------------------------------------------ */
+
+.hero {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+@media (min-width: 46rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 14rem;
+  }
+
+  .hero__portrait {
+    order: 2;
+  }
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 1.6rem + 3.6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+  text-wrap: balance;
+}
+
+.hero__role {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.hero__facts {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.hero__facts li + li::before {
+  content: '·';
+  margin-right: 0.9rem;
+  color: var(--rule);
+}
+
+.hero__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem);
+  line-height: 1.5;
+  margin: 1.75rem 0 0;
+  max-width: 34rem;
+  text-wrap: pretty;
+}
+
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 14rem;
+  border-radius: 3px;
+  background: var(--bg-sunk);
+}
+
+/* --- Abschnitte ------------------------------------------------------------ */
+
+main {
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+.section {
+  padding-block: var(--step);
+  border-top: 1px solid var(--rule);
+}
+
+.section__heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+  max-width: 30rem;
+}
+
+.section p {
+  margin: 0 0 1.05em;
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.list-intro {
+  color: var(--text-muted);
+}
+
+.work-list {
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+  max-width: var(--measure);
+}
+
+.work-list li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin-bottom: 0.55rem;
+  text-wrap: pretty;
+}
+
+.work-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.45rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* --- Werdegang ------------------------------------------------------------- */
+
+.career {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 44rem;
+}
+
+.career > li + li {
+  margin-top: 1.6rem;
+}
+
+@media (min-width: 46rem) {
+  .career > li {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.career__period {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.2rem;
+}
+
+.career__role {
+  font-weight: 500;
+  margin: 0;
+}
+
+.career__org {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.career__note {
+  color: var(--text-muted);
+  margin: 0.2rem 0 0;
+  font-size: 0.9375rem;
+}
+
+/* --- Repositories ---------------------------------------------------------- */
+
+.repos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 44rem;
+}
+
+.repos > li + li {
+  margin-top: 1.35rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--rule);
+}
+
+.repos a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.repos a:hover,
+.repos a:focus-visible {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.repos p {
+  margin: 0.3rem 0 0;
+  color: var(--text-muted);
+  max-width: var(--measure);
+}
+
+/* --- Kontakt --------------------------------------------------------------- */
+
+.contact-lines {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.75rem;
+  align-items: baseline;
+}
+
+.contact-lines a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-lines a:hover,
+.contact-lines a:focus-visible {
+  color: var(--accent-hover);
+  border-bottom-color: currentColor;
+}
+
+.contact-mail {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
+}
+
+/* --- Fuß ------------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem 3rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.site-footer p {
+  margin: 0;
+  max-width: var(--measure);
+}
+
+/* --- Rechtstexte ----------------------------------------------------------- */
+
+.legal {
+  padding-block: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3rem);
+  max-width: var(--measure);
+}
+
+.legal h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 1.5rem + 1.6vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.5rem;
+}
+
+.legal h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 2.25rem 0 0.6rem;
+}
+
+.legal p,
+.legal li {
+  text-wrap: pretty;
+}
+
+.legal p {
+  margin: 0 0 1em;
+}
+
+.legal ul {
+  margin: 0 0 1em;
+  padding-left: 1.1rem;
+}
+
+.legal li {
+  margin-bottom: 0.35rem;
+}
+
+.legal a {
+  color: var(--accent);
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 2.5rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* --- Druck ----------------------------------------------------------------- */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --text: #000;
+    --text-muted: #333;
+    --rule: #bbb;
+    --accent: #000;
+  }
+
+  body {
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  .topbar,
+  .skip-link,
+  .site-footer nav {
+    display: none;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+
+  .section {
+    break-inside: avoid;
+    padding-block: 0.9rem;
+  }
+
+  .hero {
+    padding-block: 0 1rem;
+  }
+
+  .hero__portrait img {
+    max-width: 8rem;
+  }
+
+  .repos a::after {
+    content: ' (' attr(href) ')';
+    font-size: 8pt;
+    color: #555;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}

@@ -1,0 +1,127 @@
+---
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/ibm-plex-sans';
+import '../styles/global.css';
+import type { Content } from '../content/types';
+
+interface Props {
+  content: Content;
+  /** Kanonischer Pfad dieser Seite, mit führendem und abschließendem Slash. */
+  path: string;
+  /** Pfad derselben Seite in der jeweils anderen Sprache. */
+  altPath: string;
+  title?: string;
+  description?: string;
+  /** Person-JSON-LD nur auf der Profilseite ausgeben, nicht auf Rechtstexten. */
+  profileSchema?: boolean;
+}
+
+const { content, path, altPath, title, description, profileSchema = false } = Astro.props;
+
+const site = 'https://frank-trauernicht.de';
+const canonical = `${site}${path}`;
+const dePath = content.lang === 'de' ? path : altPath;
+const enPath = content.lang === 'en' ? path : altPath;
+
+const pageTitle = title ?? content.meta.title;
+const pageDescription = description ?? content.meta.description;
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${site}/#profile`,
+  url: `${site}/`,
+  inLanguage: content.htmlLang,
+  mainEntity: {
+    '@type': 'Person',
+    '@id': `${site}/#person`,
+    name: 'Frank Trauernicht',
+    givenName: 'Frank',
+    familyName: 'Trauernicht',
+    jobTitle: content.hero.role,
+    description: content.meta.description,
+    url: `${site}/`,
+    image: `${site}/frank-trauernicht.jpg`,
+    email: `mailto:${content.contact.email}`,
+    knowsLanguage: ['de', 'en', 'nds'],
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'Ostfriesland',
+      addressCountry: 'DE',
+    },
+    knowsAbout: [
+      'C#',
+      '.NET',
+      'Softwarearchitektur',
+      'Modernisierung von Bestandssystemen',
+      'Verteilte Systeme',
+      'Datenverarbeitung in großem Umfang',
+      'On-Premises-Betrieb',
+      'Anwendungssicherheit',
+      'Technische Führung',
+    ],
+    sameAs: content.contact.profiles.map((p) => p.url),
+  },
+};
+---
+
+<!doctype html>
+<html lang={content.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="alternate" hreflang="de" href={`${site}${dePath}`} />
+    <link rel="alternate" hreflang="en" href={`${site}${enPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}${dePath}`} />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Frank Trauernicht" />
+    <meta property="og:locale" content={content.lang === 'de' ? 'de_DE' : 'en_GB'} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${site}/og-image.png`} />
+    <meta property="og:image:alt" content={content.meta.ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="author" content="Frank Trauernicht" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    {
+      profileSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(person)} />
+      )
+    }
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">{content.skipLink}</a>
+
+    <div class="wrap">
+      <div class="topbar">
+        <a class="lang-switch" href={content.otherLang.href} hreflang={content.otherLang.code} aria-label={content.otherLang.aria}>
+          {content.otherLang.label}
+        </a>
+      </div>
+    </div>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <nav aria-label={content.lang === 'de' ? 'Rechtliches' : 'Legal'}>
+          <a href={content.footer.imprint.href}>{content.footer.imprint.label}</a>
+          <a href={content.footer.privacy.href}>{content.footer.privacy.label}</a>
+        </nav>
+        <p>{content.footer.note}</p>
+      </div>
+    </footer>
+  </body>
+</html>

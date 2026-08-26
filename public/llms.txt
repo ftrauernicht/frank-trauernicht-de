@@ -1,0 +1,34 @@
+# Frank Trauernicht
+
+> Senior Software Engineer aus Ostfriesland, Deutschland. C# und .NET seit 2011.
+> Architektur und Modernisierung gewachsener Systeme. Sieben Jahre lang Mitgruender
+> und Geschaeftsfuehrer eines eigenen Softwareunternehmens mit einem Team von zwoelf
+> Personen, heute wieder als Entwickler taetig.
+
+## Kurzprofil
+
+- Rolle: Senior Software Engineer, festangestellt
+- Schwerpunkt: C#, .NET, Softwarearchitektur, Modernisierung von Bestandssystemen
+- Betrieb: Cloud und On-Premises, auch in regulierten Umgebungen
+- Sicherheit: OWASP-orientierte Reviews und Scans, kein Penetration Tester
+- Fuehrung: sieben Jahre Geschaeftsfuehrung, Team von zwoelf Personen
+- Ausbildung: Fachinformatiker Anwendungsentwicklung, bewusst kein Studium
+- Ort: Ostfriesland, Deutschland, remote
+- Sprachen: Deutsch, Englisch, Plattdeutsch
+
+## Seiten
+
+- [Profil, deutsch](https://frank-trauernicht.de/)
+- [Profil, englisch](https://frank-trauernicht.de/en/)
+- [Impressum](https://frank-trauernicht.de/impressum/)
+- [Datenschutz](https://frank-trauernicht.de/datenschutz/)
+
+## Profile
+
+- GitHub: https://github.com/ftrauernicht
+- LinkedIn: https://www.linkedin.com/in/frank-trauernicht/
+- XING: https://www.xing.com/profile/Frank_Trauernicht
+
+## Kontakt
+
+mail@frank-trauernicht.de

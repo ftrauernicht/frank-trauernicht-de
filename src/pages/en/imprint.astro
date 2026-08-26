@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import { en } from '../../content/en';
+
+const title = 'Legal notice — Frank Trauernicht';
+const description = 'Who is responsible for the content of this site, and how to get in touch.';
+---
+
+<Base content={en} path="/en/imprint/" altPath="/impressum/" title={title} description={description}>
+  <main id="main" class="wrap">
+    <article class="legal">
+      <h1>Legal notice</h1>
+
+      <p>
+        <em>
+          This is a courtesy translation. In case of doubt, the
+          <a href="/impressum/">German version</a> applies.
+        </em>
+      </p>
+
+      <h2>Responsible for the content</h2>
+      <p>
+        Frank Trauernicht<br />
+        East Frisia, Germany
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:mail@frank-trauernicht.de">mail@frank-trauernicht.de</a>
+      </p>
+
+      <h2>Nature of this site</h2>
+      <p>
+        This is a private personal page. It offers no goods and no services, carries no advertising
+        and no affiliate links, and pursues no commercial purpose.
+      </p>
+
+      <h2>Liability for content</h2>
+      <p>
+        The content of this site is compiled with care, but no guarantee is given as to its
+        accuracy, completeness or timeliness. As a service provider I am responsible for my own
+        content under general law, but I am not obliged to monitor transmitted or stored
+        third-party information or to investigate circumstances indicating unlawful activity.
+      </p>
+
+      <h2>Liability for links</h2>
+      <p>
+        This site links to external websites over whose content I have no influence. Responsibility
+        for that content lies with the respective provider. No unlawful content was apparent at the
+        time of linking. Should I become aware of any legal violation, I will remove the link
+        promptly.
+      </p>
+
+      <h2>Copyright</h2>
+      <p>
+        The texts published here and the portrait photograph are subject to German copyright law.
+        Reproduction, adaptation and distribution beyond the limits of copyright require my written
+        consent. The source code of this site is publicly available; the licence stated there
+        applies to the code, not to the content.
+      </p>
+
+      <a class="back-home" href="/en/">{en.legal.backHome}</a>
+    </article>
+  </main>
+</Base>
