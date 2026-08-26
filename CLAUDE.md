@@ -84,6 +84,18 @@ Ruecknahme dauert Monate. Fuer eine oeffentliche Visitenkarte ohne Anmeldung und
 Daten ist der Gewinn praktisch null — er greift nur beim allerersten Aufruf in einem
 fabrikneuen Browser. `includeSubDomains` bleibt: Das ist reversibel, `preload` nicht.
 
+**`connect-src 'self'` in der CSP.** Sieht wie eine Aufweichung aus, ist keine: Mit
+`script-src 'none'` kann kein Code eine Anfrage ausloesen. Ohne den Eintrag greift
+`default-src 'none'`, und Werkzeuge, die aus dem Seitenkontext heraus die
+`robots.txt` holen — Lighthouse tut das — scheitern und melden sie als ungueltig.
+Echte Crawler holen sie direkt und waren nie betroffen.
+
+**Die Leistung wird in der CI nicht bewertet, nur berichtet.** Lighthouse meldet auf
+geteilten GitHub-Runnern 437 ms *Script Evaluation* auf einer Seite, die kein einziges
+Byte JavaScript ausliefert. Dort wird die Messumgebung gemessen, nicht die Seite. Fuer
+die Leistung gilt PageSpeed Insights; die uebrigen drei Kategorien sind deterministisch
+und stehen deshalb auf 100.
+
 ## Angaben, die veralten
 
 Zwei Werte werden **zur Bauzeit** errechnet, nicht im Browser — die CSP verbietet

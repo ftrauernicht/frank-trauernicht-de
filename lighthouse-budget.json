@@ -1,7 +1,7 @@
 {
-  "_kommentar": "Untergrenzen je Kategorie, 0 bis 100. Werte hier anheben, sobald die Seite sie stabil erreicht — Lighthouse schwankt auf geteilten Runnern um ein bis zwei Punkte, deshalb steht die Leistung bewusst unter dem gemessenen Wert.",
-  "performance": 90,
-  "accessibility": 95,
-  "best-practices": 95,
-  "seo": 95
+  "_kommentar": "Untergrenzen je Kategorie. Kategorien ohne Zahl werden nur berichtet, nicht bewertet — die Leistung steht hier bewusst nicht drin: Lighthouse meldet auf geteilten GitHub-Runnern 437 ms Script Evaluation auf einer Seite ohne eine einzige Zeile JavaScript. Gemessen wird dort die Messumgebung, nicht die Seite. Fuer die Leistung gilt PageSpeed Insights.",
+  "performance": null,
+  "accessibility": 100,
+  "best-practices": 100,
+  "seo": 100
 }

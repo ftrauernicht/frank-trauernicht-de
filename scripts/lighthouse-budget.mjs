@@ -13,7 +13,11 @@ console.log(`Lighthouse ${bericht.lighthouseVersion} · ${bericht.finalDisplayed
 for (const [schluessel, kategorie] of Object.entries(bericht.categories)) {
   const wert = Math.round((kategorie.score ?? 0) * 100);
   const grenze = grenzen[schluessel];
-  if (typeof grenze !== 'number') continue;
+  // Kategorien ohne Zahl werden berichtet, aber nicht bewertet.
+  if (typeof grenze !== 'number') {
+    console.log(`  --    ${kategorie.title.padEnd(16)} ${String(wert).padStart(3)}  (nur berichtet)`);
+    continue;
+  }
   const ok = wert >= grenze;
   if (!ok) verletzt++;
   console.log(`  ${ok ? 'ok  ' : 'FEHL'}  ${kategorie.title.padEnd(16)} ${String(wert).padStart(3)}  (mindestens ${grenze})`);
