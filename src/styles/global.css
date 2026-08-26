@@ -14,7 +14,7 @@
   --rule-strong: #d5c6ad;
   --accent: #a4552b;
   --accent-hover: #7f3f1d;
-  --accent-wash: #f3e4d7;
+  --accent-wash: #f8eee5;
   --shadow: 0 1px 2px rgb(60 40 20 / 0.05), 0 8px 24px -12px rgb(60 40 20 / 0.18);
 
   --font-display: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif;
@@ -214,6 +214,10 @@ body {
   border: 1px solid var(--accent);
   border-radius: 2px;
   opacity: 0.55;
+}
+
+.hero__portrait picture {
+  display: block;
 }
 
 .hero__portrait img {
