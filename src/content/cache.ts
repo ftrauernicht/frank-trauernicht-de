@@ -57,7 +57,7 @@ export const cacheDe: CacheContent = {
   ],
   hintSummary: 'Hinweis anzeigen',
   rotSummary: 'Ich kann kein ROT13',
-  hintPlain: 'Du stehst drauf. Wie immer.',
+  hintPlain: 'Das Schwere am Cache ist nicht das Finden. Es ist das Invalidieren.',
   logHeading: 'Logbuch',
   logIntro:
     'Kein Server, keine Datenbank, kein Formular — es gibt hier buchstäblich nichts, wo ein Eintrag hinkönnte. Das Logbuch ist also mein Postfach, und das ist mir ohnehin lieber.',
@@ -102,7 +102,7 @@ export const cacheEn: CacheContent = {
   ],
   hintSummary: 'Show the hint',
   rotSummary: 'I do not speak ROT13',
-  hintPlain: 'You are standing on it. As always.',
+  hintPlain: 'The hard part of a cache is never finding it. It is invalidating it.',
   logHeading: 'Logbook',
   logIntro:
     'No server, no database, no form — there is literally nowhere here for an entry to go. So the logbook is my inbox, which I prefer anyway.',
