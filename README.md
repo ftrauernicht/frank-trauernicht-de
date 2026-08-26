@@ -30,3 +30,9 @@ des Impressums — siehe `CLAUDE.md`.
 
 Und sie lädt **nichts von fremden Servern**. Keine Schriften von einem CDN, keine
 Analyse, keine Einbettungen. Daran hängt die Cookie-Freiheit. Beides prüft die CI.
+
+## Lizenz
+
+Der Code steht unter MIT. Texte, Porträtfoto und Vorschaubild nicht — Einzelheiten
+in [`LICENSE`](LICENSE). Wer die Seite als Vorlage nehmen will: gern, mit eigenen
+Texten und eigenem Gesicht.

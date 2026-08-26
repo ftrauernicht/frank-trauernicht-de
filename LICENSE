@@ -1,0 +1,49 @@
+Geltungsbereich / Scope
+=======================
+
+Die MIT-Lizenz unten gilt für den **Quellcode** dieses Repositorys: Astro-
+Komponenten und Layouts, CSS, Konfiguration, Build- und CI-Dateien.
+
+Sie gilt ausdrücklich **nicht** für:
+
+  - die Texte unter `src/content/` und in `src/pages/`
+  - das Porträtfoto (`public/frank-trauernicht.jpg`, `public/apple-touch-icon.png`)
+  - das Vorschaubild (`public/og-image.png`)
+  - den Namen und die Marke „Frank Trauernicht“
+
+Diese Inhalte sind urheberrechtlich geschützt, alle Rechte vorbehalten. Wer die
+Seite als Vorlage nehmen möchte: gern — mit eigenen Texten und eigenem Gesicht.
+
+The MIT licence below covers the **source code** of this repository: Astro
+components and layouts, CSS, configuration, build and CI files. It explicitly
+does not cover the texts under `src/content/` and `src/pages/`, the portrait
+photograph, the preview image, or the name „Frank Trauernicht“. Those are
+copyrighted, all rights reserved. Feel free to use the code as a starting
+point — with your own words and your own face.
+
+Die für den Betrieb mitgelieferten Schriftarten (Source Serif 4, IBM Plex Sans)
+stehen unter der SIL Open Font License 1.1 ihrer jeweiligen Urheber.
+
+
+MIT License
+===========
+
+Copyright (c) 2026 Frank Trauernicht
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
