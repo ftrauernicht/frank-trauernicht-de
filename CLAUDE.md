@@ -96,6 +96,12 @@ Byte JavaScript ausliefert. Dort wird die Messumgebung gemessen, nicht die Seite
 die Leistung gilt PageSpeed Insights; die uebrigen drei Kategorien sind deterministisch
 und stehen deshalb auf 100.
 
+**TypeScript bleibt vorerst bei 6.** `@astrojs/check` deklariert
+`typescript@"^5.0.0 || ^6.0.0"` als Peer-Abhaengigkeit; mit Version 7 bricht `npm ci`
+mit ERESOLVE ab. Die Hauptversion ist bei Dependabot deshalb auf ignoriert gesetzt.
+Sobald `@astrojs/check` TypeScript 7 unterstuetzt, faellt die Sperre weg — dann im
+zugehoerigen Dependabot-PR `@dependabot unignore` kommentieren.
+
 ## Angaben, die veralten
 
 Zwei Werte werden **zur Bauzeit** errechnet, nicht im Browser — die CSP verbietet
