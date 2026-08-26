@@ -134,6 +134,13 @@ die Hauptdomain, und `vercel.json` setzt fuer diesen Host zusaetzlich
 `X-Robots-Tag: noindex`. Ein zweites Projekt nur fuer eine Textdatei waere teurer
 zu pflegen als diese beiden Zeilen.
 
+**Vercel wendet auf `/.well-known/` keine eigenen Header an.** Weder die CSP noch
+`X-Robots-Tag` noch das `includeSubDomains` des HSTS kommen dort an; stattdessen setzt
+Vercel `Access-Control-Allow-Origin: *`. Das betrifft `mta-sts.txt` und `security.txt`
+gleichermassen und ist folgenlos — beide brauchen nur HTTPS, Status 200 und
+`text/plain`. Wer dort die Header der uebrigen Seite erwartet, sucht lange nach einem
+Fehler, den es nicht gibt.
+
 `mode` steht auf **`testing`** — Stufe 1 von 2. Dort meldet MTA-STS Verstoesse ueber
 TLS-RPT, lehnt aber nichts ab. Erst wenn die Berichte ueber mehrere Wochen sauber
 sind, geht `mode` auf `enforce` und `max_age` auf `604800`. Umgekehrt waere ein
