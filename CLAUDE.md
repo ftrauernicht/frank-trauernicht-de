@@ -58,9 +58,10 @@ behauptet "zwei Stationen"; wer die Kette aendert, aendert auch diese Zeile.
 `/cache/` traegt `noindex` und ist per `filter` aus der Sitemap ausgenommen. **Nicht** in die
 `robots.txt` aufnehmen — ein `Disallow` verraet den Pfad an jeden, der die Datei aufruft.
 
-Der echte Geocache existiert; sein Ort gehoert nirgendwohin. Auf /cache/ steht **kein Ort, kein
-GC-Code und keine Koordinate** — das Impressum fuehrt bewusst keine Anschrift, und ein
-Cache-Listing haette genau die geliefert.
+Auf `/cache/` steht **kein Ort, kein GC-Code und keine Koordinate**, auch nicht zum echten
+Cache. Das Impressum fuehrt bewusst keine Anschrift; ein Cache-Listing haette sie geliefert.
+Diese Regel gilt ohne Ausnahme und ohne Diskussion — auch dann, wenn eine Ergaenzung nur
+gutgemeint waere.
 
 ## Texte ändern
 

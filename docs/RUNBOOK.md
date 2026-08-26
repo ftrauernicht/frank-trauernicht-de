@@ -4,11 +4,14 @@
 
 | | |
 |---|---|
-| Registrar | deutscher Registrar |
-| DNS | Microsoft 365 (an Microsoft 365 delegiert) |
-| Mail | Exchange Online, Tenant `<tenant>` |
-| Alter Webserver | eigener vServer |
+| Registrar | deutscher Registrar, Zone an Microsoft 365 delegiert |
+| Mail | Exchange Online |
+| Alter Webserver | eigener vServer, wird nach dem Umzug abgeschaltet |
 | Neues Hosting | Vercel, statisch |
+
+> Adressen, Kennungen und Versionsstaende stehen **nicht** in diesem oeffentlichen
+> Repository. Sie sind zwar ohnehin aus DNS und Antwortheadern ablesbar — aber es gibt
+> keinen Grund, sie zusaetzlich an einer Stelle zu buendeln und damit haltbar zu machen.
 | Repository | https://github.com/ftrauernicht/frank-trauernicht-de (oeffentlich) |
 
 Hosting und DNS sind **zwei getrennte Entscheidungen**. Der Umzug auf Vercel braucht
@@ -37,8 +40,8 @@ nur einen A-Record; das DNS kann vorerst bei Microsoft bleiben.
    umstellen, `www` als CNAME auf den dort genannten Zielnamen.
 6. Zertifikat abwarten, dann Pruefliste ein zweites Mal — diesmal gegen die eigene
    Domain, inklusive `curl -I` fuer die Header und `X-Moin`.
-7. Erst danach den alten Apache abschalten. Vorher dort in jedem Fall
-   `Options -Indexes` setzen — falls Directory-Indexing aktiv ist.
+7. Erst danach den alten Webserver abschalten. Solange er laeuft, dort
+   `Options -Indexes` setzen, falls Directory-Indexing aktiv ist.
 8. Nach dem Livegang: Website-Feld im GitHub-Profil und im Repository setzen,
    dazu LinkedIn und XING. Vorher nicht — solange die Domain den Apache zeigt,
    schadet der Verweis mehr, als er nutzt.
@@ -73,7 +76,7 @@ Mitzunehmende Einträge:
 | MX | @ | `franktrauernicht-de01c.mail.protection.outlook.com` (Prio 0) |
 | TXT | @ | `v=spf1 include:spf.protection.outlook.com -all` |
 | TXT | @ | `mscid=…` |
-| TXT | @ | `<tenant>.onmicrosoft.com` |
+| TXT | @ | die Tenant-Kennung, wie sie bereits in der Zone steht |
 | CNAME | autodiscover | `autodiscover.outlook.com` |
 | CNAME | selector1/2._domainkey | nach Aktivierung von DKIM |
 
