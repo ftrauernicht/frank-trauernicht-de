@@ -102,6 +102,44 @@ mit ERESOLVE ab. Die Hauptversion ist bei Dependabot deshalb auf ignoriert geset
 Sobald `@astrojs/check` TypeScript 7 unterstuetzt, faellt die Sperre weg — dann im
 zugehoerigen Dependabot-PR `@dependabot unignore` kommentieren.
 
+## E-Mail-Transport: MTA-STS und TLS-RPT
+
+MTA-STS zwingt sendende Server, Post an diese Domain nur ueber geprueftes TLS
+zuzustellen. Es besteht aus **zwei Haelften, die zusammenpassen muessen**:
+
+- die Policy unter `https://mta-sts.frank-trauernicht.de/.well-known/mta-sts.txt`,
+  erzeugt von der Integration in `astro.config.mjs`
+- ein TXT-Eintrag `_mta-sts` im DNS, der eine `id` traegt
+
+Die `id` ist ein **Hash des Policy-Inhalts**, kein Zeitstempel. Das ist Absicht: so
+ueberlebt sie den monatlichen Rebuild unveraendert und springt genau dann, wenn
+sich die Policy wirklich aendert. Ein Datum wuerde bei jedem Rebuild wandern und
+fremde Caches grundlos verwerfen lassen.
+
+**Die haeufigste Fehlerquelle ist, die Policy zu aendern und das DNS zu vergessen.**
+Dann holen sendende Server die neue Fassung nie ab — ihre alte ist ja noch gueltig.
+`scripts/smoke.sh` vergleicht deshalb den DNS-Eintrag gegen den Hash der
+ausgelieferten Datei; der Build gibt die erwartete Zeile ebenfalls aus.
+
+Zwei Dinge, die nicht angetastet werden duerfen:
+
+- **Die Policy darf nicht ueber eine Weiterleitung kommen.** RFC 8461 verbietet
+  sendenden Servern ausdruecklich, Redirects zu folgen. Ein 301 auf die Hauptdomain
+  macht MTA-STS wirkungslos, ohne dass irgendwo ein Fehler sichtbar wuerde.
+- **Zeilenenden sind CRLF**, nicht LF. Ebenfalls RFC 8461.
+
+Die Subdomain `mta-sts.` zeigt auf dasselbe Vercel-Projekt und liefert damit auch
+die Webseite aus. Unschoen, aber harmlos: der `canonical` ist absolut und zeigt auf
+die Hauptdomain, und `vercel.json` setzt fuer diesen Host zusaetzlich
+`X-Robots-Tag: noindex`. Ein zweites Projekt nur fuer eine Textdatei waere teurer
+zu pflegen als diese beiden Zeilen.
+
+`mode` steht auf **`testing`** — Stufe 1 von 2. Dort meldet MTA-STS Verstoesse ueber
+TLS-RPT, lehnt aber nichts ab. Erst wenn die Berichte ueber mehrere Wochen sauber
+sind, geht `mode` auf `enforce` und `max_age` auf `604800`. Umgekehrt waere ein
+Konfigurationsfehler still verlorene Post — und niemand merkt es, weil der Absender
+den Fehler sieht, nicht der Empfaenger.
+
 ## Angaben, die veralten
 
 Zwei Werte werden **zur Bauzeit** errechnet, nicht im Browser — die CSP verbietet
@@ -124,7 +162,7 @@ automatisch auf das Baudatum zu setzen wuerde behaupten, der Text habe sich geae
 | Workflow | Wann | Wofuer |
 |---|---|---|
 | `ci.yml` | jeder Push | Build, Typen, kein fremder Host, kein Skript, `npm audit` |
-| `smoke.yml` | Push, montags | die **ausgelieferte** Seite: Header, Cookies, Weiterleitungen, Kette, `security.txt` |
+| `smoke.yml` | Push, montags | die **ausgelieferte** Seite: Header, Cookies, Weiterleitungen, Kette, `security.txt`, MTA-STS gegen DNS |
 | `lighthouse.yml` | Push, montags | vier Kategorien gegen `lighthouse-budget.json` |
 | `links.yml` | montags | externe Verweise |
 | `refresh.yml` | monatlich | Neubau, damit die Bauzeit-Werte frisch bleiben |

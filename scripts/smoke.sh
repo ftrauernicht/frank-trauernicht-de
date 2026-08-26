@@ -145,6 +145,37 @@ else
 fi
 
 echo
+echo "== E-Mail-Transport =="
+STS_URL="https://mta-sts.frank-trauernicht.de/.well-known/mta-sts.txt"
+
+# RFC 8461: die Policy muss direkt ausgeliefert werden. Einem Redirect darf ein
+# sendender Server ausdruecklich nicht folgen — ein 301 macht MTA-STS wirkungslos,
+# und zwar lautlos.
+code="$(curl -sS -o "$TMP/sts" -m 30 -D "$TMP/sts.head" -w '%{http_code}' "$STS_URL" 2>/dev/null)"
+[ "$code" = "200" ]   && melde_ok "mta-sts.txt wird direkt ausgeliefert"   || melde_fehl "mta-sts.txt" "HTTP $code statt 200 (Weiterleitungen sind unzulaessig)"
+
+grep -qi '^content-type: *text/plain' "$TMP/sts.head" 2>/dev/null   && melde_ok "mta-sts.txt als text/plain"   || melde_fehl "mta-sts.txt Content-Type" "$(grep -i '^content-type' "$TMP/sts.head" 2>/dev/null | tr -d '')"
+
+grep -q '^version: STSv1' "$TMP/sts" 2>/dev/null   && melde_ok "Policy traegt version: STSv1"   || melde_fehl "Policy" "keine STSv1-Kennung"
+
+modus="$(grep -i '^mode:' "$TMP/sts" 2>/dev/null | cut -d' ' -f2 | tr -d '')"
+case "$modus" in
+  enforce) melde_ok "Policy im Modus enforce" ;;
+  testing) melde_ok "Policy im Modus testing (Stufe 1, siehe CLAUDE.md)" ;;
+  *)       melde_fehl "Policy-Modus" "unerwartet: ${modus:-keiner}" ;;
+esac
+
+# Die haeufigste Fehlerquelle ueberhaupt: Policy geaendert, DNS vergessen. Dann
+# holen sendende Server die neue Fassung nie ab — ihre alte ist ja noch gueltig.
+soll="$(sha256sum "$TMP/sts" 2>/dev/null | cut -c1-16)"
+ist="$(curl -sS -m 30 'https://dns.google/resolve?name=_mta-sts.frank-trauernicht.de&type=TXT' 2>/dev/null        | grep -oE 'id=[A-Za-z0-9]+' | head -1 | cut -d= -f2)"
+if   [ -z "$ist" ];        then melde_fehl "_mta-sts im DNS" "kein TXT-Eintrag gefunden"
+elif [ "$ist" = "$soll" ]; then melde_ok   "DNS-id passt zur ausgelieferten Policy"
+else melde_fehl "DNS-id ist veraltet" "DNS: $ist, Datei: $soll — TXT-Eintrag nachziehen"; fi
+
+curl -sS -m 30 'https://dns.google/resolve?name=_smtp._tls.frank-trauernicht.de&type=TXT' 2>/dev/null   | grep -q 'v=TLSRPTv1'   && melde_ok "TLS-RPT ist im DNS hinterlegt"   || melde_fehl "TLS-RPT" "kein _smtp._tls TXT-Eintrag"
+
+echo
 if [ "$fehler" -eq 0 ]; then
   printf '\033[32m%d Pruefungen, keine Beanstandung.\033[0m\n' "$geprueft"
 else
