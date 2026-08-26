@@ -8,7 +8,7 @@ export const de: Content = {
   meta: {
     title: 'Frank Trauernicht — Senior Software Engineer',
     description:
-      'Senior Software Engineer aus Ostfriesland. C# und .NET seit 2011, Architektur und Modernisierung gewachsener Systeme. Sieben Jahre eigenes Softwareunternehmen, heute wieder in der Entwicklung.',
+      'Senior Software Engineer aus Ostfriesland. C# und .NET seit 2011, Architektur und Modernisierung gewachsener Systeme, Betrieb auch in regulierten Umgebungen. Sieben Jahre Führungserfahrung aus einem eigenen Softwareunternehmen.',
     ogAlt: 'Porträt von Frank Trauernicht',
   },
 
@@ -19,7 +19,7 @@ export const de: Content = {
     role: 'Senior Software Engineer',
     facts: ['C# und .NET seit 2011', 'Ostfriesland, remote'],
     lead: [
-      'Ich baue seit fünfzehn Jahren Software in C# und .NET. Sieben Jahre davon habe ich ein eigenes Unternehmen geführt und ein Team von zwölf Leuten. Heute arbeite ich wieder als Entwickler — und das ist eine bewusste Entscheidung, keine Rückstufung.',
+      'Ich baue seit fünfzehn Jahren Software in C# und .NET. Meistens dort, wo schon etwas läuft, das weiterlaufen soll: gewachsene Systeme, große Datenmengen, Umgebungen mit Auflagen.',
     ],
     photoAlt: 'Frank Trauernicht',
   },
@@ -63,9 +63,9 @@ export const de: Content = {
     },
     {
       id: 'verantwortung',
-      heading: 'Sieben Jahre Verantwortung',
+      heading: 'Was aus sieben Jahren Führung geblieben ist',
       paragraphs: [
-        'Sieben Jahre lang habe ich ein Softwareunternehmen geführt, das ich mitgegründet habe. Meine Hälfte der Geschäftsführung war die technische und vor allem die menschliche: Ideen finden, die sich lohnen, daraus belastbare Pläne machen, mitbauen — und genug Struktur halten, dass die anderen arbeiten konnten, ohne auf mich zu warten.',
+        'Sieben Jahre lang habe ich ein Softwareunternehmen geführt, das ich mitgegründet habe, zuletzt mit einem Team von zwölf Leuten. Meine Hälfte der Geschäftsführung war die technische und vor allem die menschliche: Ideen finden, die sich lohnen, daraus belastbare Pläne machen, mitbauen — und genug Struktur halten, dass die anderen arbeiten konnten, ohne auf mich zu warten.',
         'Das hat verändert, wie ich entwickle. Wenn man drei Jahre später noch da ist und pflegt, was man entschieden hat, hört Architektur auf, eine Geschmacksfrage zu sein.',
         'Der planende Teil ist mitgekommen: Schätzungen, die halten. Umfänge, die man kürzen kann, ohne dass alles zusammenfällt. Und die Angewohnheit, in die Zahlen zu sehen — eine technische Entscheidung ist eine Kostenstruktur, und ich kann sie denen erklären, die sie unterschreiben.',
       ],
@@ -165,7 +165,7 @@ export const de: Content = {
     heading: 'Abseits davon',
     paragraphs: [
       'Außerhalb der Arbeit bin ich beim Geocaching unterwegs, treibe die Automatisierung meines Zuhauses weiter, als irgendjemand verlangt hat, und konstruiere und drucke in 3D. Keine Figuren — Halterungen, Ersatzteile, Dinge, die ein konkretes Problem lösen. Etwas bauen, etwas reparieren, etwas Brauchbares herstellen: derselbe Antrieb wie im Beruf, nur ohne Ticketsystem.',
-      'Ich lebe und arbeite in Ostfriesland. Deutsch, Englisch und, wenn es sein muss, Plattdeutsch.',
+      'Ich lebe und arbeite in Ostfriesland. Deutsch und Englisch im Beruf, Plattdeutsch, wenn jemand damit anfängt.',
     ],
     emailIntro: 'Erreichbar unter',
     email: 'mail@frank-trauernicht.de',

@@ -3,7 +3,7 @@
 > Senior Software Engineer aus Ostfriesland, Deutschland. C# und .NET seit 2011.
 > Architektur und Modernisierung gewachsener Systeme. Sieben Jahre lang Mitgruender
 > und Geschaeftsfuehrer eines eigenen Softwareunternehmens mit einem Team von zwoelf
-> Personen, heute wieder als Entwickler taetig.
+> Personen. Schwerpunkt heute: Architektur und Modernisierung gewachsener Systeme.
 
 ## Kurzprofil
 

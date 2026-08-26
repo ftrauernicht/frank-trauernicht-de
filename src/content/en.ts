@@ -8,7 +8,7 @@ export const en: Content = {
   meta: {
     title: 'Frank Trauernicht — Senior Software Engineer',
     description:
-      'Senior software engineer based in East Frisia, northern Germany. C# and .NET since 2011, architecture and modernisation of long-lived systems. Seven years running my own software company, now back in engineering.',
+      'Senior software engineer based in East Frisia, northern Germany. C# and .NET since 2011, architecture and modernisation of long-lived systems, operations in regulated environments too. Seven years of leadership from running my own software company.',
     ogAlt: 'Portrait of Frank Trauernicht',
   },
 
@@ -19,7 +19,7 @@ export const en: Content = {
     role: 'Senior Software Engineer',
     facts: ['C# and .NET since 2011', 'East Frisia, Germany — remote'],
     lead: [
-      'I have been building software in C# and .NET for fifteen years. For seven of them I ran my own company and a team of twelve. Today I am an engineer again — a deliberate choice, not a step down.',
+      'I have been building software in C# and .NET for fifteen years. Mostly where something is already running and is meant to keep running: long-lived systems, large volumes of data, environments with constraints.',
     ],
     photoAlt: 'Frank Trauernicht',
   },
@@ -63,9 +63,9 @@ export const en: Content = {
     },
     {
       id: 'responsibility',
-      heading: 'Seven years of responsibility',
+      heading: 'What seven years of running a company left me with',
       paragraphs: [
-        'For seven years I ran a software company I co-founded. My half of it was the technical one and, above all, the human one: finding the ideas worth pursuing, turning them into plans that hold, building alongside the team, and keeping things structured enough that people could work without waiting on me.',
+        'For seven years I ran a software company I co-founded, latterly with a team of twelve. My half of it was the technical one and, above all, the human one: finding the ideas worth pursuing, turning them into plans that hold, building alongside the team, and keeping things structured enough that people could work without waiting on me.',
         'It changed how I engineer. When you are still there three years later maintaining what you decided, architecture stops being a matter of taste.',
         'The planning half came with me: estimates that hold. Scope that can be cut without collapsing. And the habit of reading the numbers — a technical decision is a cost structure, and I can make that case to the people who sign for it.',
       ],
@@ -165,7 +165,7 @@ export const en: Content = {
     heading: 'Away from the desk',
     paragraphs: [
       'Outside work I go geocaching, push my home automation further than anyone asked for, and design and print in 3D. No figurines — brackets, replacement parts, things that solve an actual problem. Building something, repairing something, making something useful: the same drive as at work, only without a ticket system.',
-      'I live and work in East Frisia in northern Germany. German, English, and Low German when the occasion calls for it.',
+      'I live and work in East Frisia in northern Germany. German and English at work, and Low German whenever someone starts it.',
     ],
     emailIntro: 'Reachable at',
     email: 'mail@frank-trauernicht.de',

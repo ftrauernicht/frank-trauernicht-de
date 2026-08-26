@@ -70,6 +70,13 @@ const person = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Ohne dieses Tag streicht der Browser die Flaeche weiss, bis das externe
+        Stylesheet geladen ist — genau das kurze Aufblitzen beim Seitenwechsel.
+        Der Weg ueber ein Inline-<style> waere schneller, wuerde aber
+        'unsafe-inline' in der CSP erzwingen. Das hier kostet nichts. */}
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbf8f3" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130f" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
