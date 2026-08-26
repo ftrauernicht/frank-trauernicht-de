@@ -62,12 +62,13 @@ export const en: Content = {
       ],
     },
     {
-      id: 'responsibility',
-      heading: 'What seven years of running a company left me with',
+      id: 'delivery',
+      heading: 'Building, checking, shipping',
       paragraphs: [
-        'For seven years I ran a software company I co-founded, latterly with a team of twelve. My half of it was the technical one and, above all, the human one: finding the ideas worth pursuing, turning them into plans that hold, building alongside the team, and keeping things structured enough that people could work without waiting on me.',
-        'It changed how I engineer. When you are still there three years later maintaining what you decided, architecture stops being a matter of taste.',
-        'The planning half came with me: estimates that hold. Scope that can be cut without collapsing. And the habit of reading the numbers — a technical decision is a cost structure, and I can make that case to the people who sign for it.',
+        'This side of the work has interested me from the start. I helped build up tooling and process during my apprenticeship and pushed it forward later — and in my own company I was the only one responsible for it. Building, testing, shipping and everything hanging off that was mine.',
+        'In practice that means containers and Compose stacks for development and for production, pipelines that build and check on every commit, and a controlled way of getting updates to customers rather than distributing them and hoping. Where no suitable tool existed I built one — usually something small that removes a recurring sequence of manual steps.',
+        'Plus the unglamorous things that decide whether several people can work on the same thing at all: formatting and linting automated rather than argued about in review, naming conventions that still hold in old code, and an issue tracker where you can still work out three years later why something is the way it is.',
+        'Tools over the years: Git and, where it still had to be, Subversion. Jenkins and GitHub Actions. Docker and Compose. Jira, Confluence, and Bugzilla before them.',
       ],
     },
     {
@@ -83,6 +84,15 @@ export const en: Content = {
       paragraphs: [
         'I am not a penetration tester and I do not present myself as one. I work with the OWASP lists, run scans, read up on whatever I am about to examine, and most recently looked at a mobile application in a regulated setting.',
         'What I bring is the habit of asking, at design time, where this is going to break — rather than at the audit.',
+      ],
+    },
+    {
+      id: 'responsibility',
+      heading: 'What seven years of running a company left me with',
+      paragraphs: [
+        'For seven years I ran a software company I co-founded, latterly with a team of twelve. My half of it was the technical one and, above all, the human one: finding the ideas worth pursuing, turning them into plans that hold, building alongside the team, and keeping things structured enough that people could work without waiting on me.',
+        'It changed how I engineer. When you are still there three years later maintaining what you decided, architecture stops being a matter of taste.',
+        'The planning half came with me: estimates that hold. Scope that can be cut without collapsing. And the habit of reading the numbers — a technical decision is a cost structure, and I can make that case to the people who sign for it.',
       ],
     },
     {
@@ -116,7 +126,7 @@ export const en: Content = {
         period: '2019 – 2026',
         role: 'Co-founder and managing director, latterly senior engineer',
         org: 'Leanetec GmbH',
-        note: 'Technical direction, steering of projects, and a team of twelve.',
+        note: 'Technical direction, steering of projects, and a team of twelve. Sole responsibility for builds, releases and tooling.',
       },
       {
         period: '2011 – 2019',

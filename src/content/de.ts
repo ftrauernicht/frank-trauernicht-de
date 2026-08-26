@@ -62,12 +62,13 @@ export const de: Content = {
       ],
     },
     {
-      id: 'verantwortung',
-      heading: 'Was aus sieben Jahren Führung geblieben ist',
+      id: 'auslieferung',
+      heading: 'Bauen, prüfen, ausliefern',
       paragraphs: [
-        'Sieben Jahre lang habe ich ein Softwareunternehmen geführt, das ich mitgegründet habe, zuletzt mit einem Team von zwölf Leuten. Meine Hälfte der Geschäftsführung war die technische und vor allem die menschliche: Ideen finden, die sich lohnen, daraus belastbare Pläne machen, mitbauen — und genug Struktur halten, dass die anderen arbeiten konnten, ohne auf mich zu warten.',
-        'Das hat verändert, wie ich entwickle. Wenn man drei Jahre später noch da ist und pflegt, was man entschieden hat, hört Architektur auf, eine Geschmacksfrage zu sein.',
-        'Der planende Teil ist mitgekommen: Schätzungen, die halten. Umfänge, die man kürzen kann, ohne dass alles zusammenfällt. Und die Angewohnheit, in die Zahlen zu sehen — eine technische Entscheidung ist eine Kostenstruktur, und ich kann sie denen erklären, die sie unterschreiben.',
+        'Diese Seite der Arbeit hat mich von Anfang an interessiert. Schon während der Ausbildung habe ich Werkzeuge und Abläufe mit aufgebaut und später vorangetrieben — und in meinem eigenen Unternehmen war ich der Einzige, der dafür zuständig war. Bauen, Testen, Ausliefern und alles, was daran hängt, lag bei mir.',
+        'In der Praxis heißt das: Container und Compose-Verbünde für Entwicklung und Betrieb, Pipelines, die bei jedem Commit bauen und prüfen, und ein kontrollierter Weg, Aktualisierungen zu Kunden zu bringen, statt sie zu verteilen und zu hoffen. Wo kein passendes Werkzeug da war, habe ich eins gebaut — meist etwas Kleines, das eine wiederkehrende Handgriffsfolge überflüssig macht.',
+        'Dazu die unspektakulären Dinge, an denen sich entscheidet, ob mehrere Leute an derselben Sache arbeiten können: Formatierung und Linting automatisch statt im Review, Namenskonventionen, die auch in altem Code noch gelten, und ein Ticketsystem, in dem man drei Jahre später noch nachvollziehen kann, warum etwas so ist.',
+        'Werkzeuge über die Jahre: Git und, wo es noch sein musste, Subversion. Jenkins und GitHub Actions. Docker und Compose. Jira, Confluence und davor Bugzilla.',
       ],
     },
     {
@@ -83,6 +84,15 @@ export const de: Content = {
       paragraphs: [
         'Ich bin kein Penetration Tester und gebe mich nicht als einer aus. Ich arbeite mit den OWASP-Listen, führe Scans durch, lese mich in das ein, was ich prüfen will, und habe zuletzt eine mobile Anwendung im regulierten Umfeld untersucht.',
         'Was ich mitbringe, ist der Blick, der beim Entwurf schon fragt, wo das hier aufbricht — nicht erst beim Audit.',
+      ],
+    },
+    {
+      id: 'verantwortung',
+      heading: 'Was aus sieben Jahren Führung geblieben ist',
+      paragraphs: [
+        'Sieben Jahre lang habe ich ein Softwareunternehmen geführt, das ich mitgegründet habe, zuletzt mit einem Team von zwölf Leuten. Meine Hälfte der Geschäftsführung war die technische und vor allem die menschliche: Ideen finden, die sich lohnen, daraus belastbare Pläne machen, mitbauen — und genug Struktur halten, dass die anderen arbeiten konnten, ohne auf mich zu warten.',
+        'Das hat verändert, wie ich entwickle. Wenn man drei Jahre später noch da ist und pflegt, was man entschieden hat, hört Architektur auf, eine Geschmacksfrage zu sein.',
+        'Der planende Teil ist mitgekommen: Schätzungen, die halten. Umfänge, die man kürzen kann, ohne dass alles zusammenfällt. Und die Angewohnheit, in die Zahlen zu sehen — eine technische Entscheidung ist eine Kostenstruktur, und ich kann sie denen erklären, die sie unterschreiben.',
       ],
     },
     {
@@ -116,7 +126,7 @@ export const de: Content = {
         period: '2019 – 2026',
         role: 'Mitgründer und Geschäftsführer, zuletzt Senior Entwickler',
         org: 'Leanetec GmbH',
-        note: 'Technische Richtung, Vorhabensteuerung und ein Team von zwölf Personen.',
+        note: 'Technische Richtung, Vorhabensteuerung und ein Team von zwölf Personen. Dazu alleinige Verantwortung für Build, Auslieferung und Werkzeuge.',
       },
       {
         period: '2011 – 2019',

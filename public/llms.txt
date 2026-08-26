@@ -9,6 +9,8 @@
 
 - Rolle: Senior Software Engineer, festangestellt
 - Schwerpunkt: C#, .NET, Softwarearchitektur, Modernisierung von Bestandssystemen
+- Auslieferung: CI/CD, Docker und Compose, Build-Pipelines, eigene Werkzeuge;
+  bei Leanetec allein verantwortlich fuer Build, Rollout und Werkzeugkette
 - Betrieb: Cloud und On-Premises, auch in regulierten Umgebungen
 - Sicherheit: OWASP-orientierte Reviews und Scans, kein Penetration Tester
 - Fuehrung: sieben Jahre Geschaeftsfuehrung, Team von zwoelf Personen
