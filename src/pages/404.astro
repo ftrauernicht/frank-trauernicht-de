@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { de } from '../content/de';
+
+// Eine 404 weiss nicht, aus welcher Sprachfassung jemand kommt.
+// Deshalb zweisprachig auf einer Seite, Deutsch zuerst.
+const title = '404 — Frank Trauernicht';
+---
+
+<Base content={de} path="/404/" altPath="/404/" title={title} description="Diese Seite gibt es nicht." noindex>
+  <main id="main" class="wrap">
+    <article class="legal notfound">
+      <p class="notfound__code">404</p>
+      <h1>Hier war nie etwas.</h1>
+      <p>
+        Anders als bei den Systemen, mit denen ich sonst zu tun habe, kann ich das mit Sicherheit
+        sagen.
+      </p>
+      <p class="notfound__en" lang="en">
+        Nothing was ever here. Unlike most systems I work with, this one is certain about that.
+      </p>
+      <a class="back-home" href="/">Zurück zur Startseite</a>
+    </article>
+  </main>
+</Base>
+
+<style>
+  .notfound__code {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 2rem + 7vw, 6rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+
+  .notfound__en {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+</style>

@@ -14,9 +14,11 @@ interface Props {
   description?: string;
   /** Person-JSON-LD nur auf der Profilseite ausgeben, nicht auf Rechtstexten. */
   profileSchema?: boolean;
+  /** Seiten, die nicht in den Index gehoeren: keine Canonical, keine Alternates. */
+  noindex?: boolean;
 }
 
-const { content, path, altPath, title, description, profileSchema = false } = Astro.props;
+const { content, path, altPath, title, description, profileSchema = false, noindex = false } = Astro.props;
 
 const site = 'https://frank-trauernicht.de';
 const canonical = `${site}${path}`;
@@ -82,11 +84,17 @@ const person = {
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130f" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <link rel="canonical" href={canonical} />
+    {!noindex && <link rel="canonical" href={canonical} />}
 
-    <link rel="alternate" hreflang="de" href={`${site}${dePath}`} />
-    <link rel="alternate" hreflang="en" href={`${site}${enPath}`} />
-    <link rel="alternate" hreflang="x-default" href={`${site}${dePath}`} />
+    {
+      !noindex && (
+        <>
+          <link rel="alternate" hreflang="de" href={`${site}${dePath}`} />
+          <link rel="alternate" hreflang="en" href={`${site}${enPath}`} />
+          <link rel="alternate" hreflang="x-default" href={`${site}${dePath}`} />
+        </>
+      )
+    }
 
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Frank Trauernicht" />
@@ -99,8 +107,12 @@ const person = {
     <meta name="twitter:card" content="summary_large_image" />
 
     <meta name="author" content="Frank Trauernicht" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta
+      name="robots"
+      content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}
+    />
 
+    <link rel="author" href="/humans.txt" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 

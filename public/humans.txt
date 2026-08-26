@@ -1,0 +1,25 @@
+                    /* TEAM */
+
+  Entwickler und Verfasser: Frank Trauernicht
+  Kontakt:                  mail@frank-trauernicht.de
+  Ort:                      Ostfriesland, Deutschland
+  Sprachen:                 Deutsch, Englisch, Plattdeutsch
+
+
+                    /* TECHNIK */
+
+  Erzeugt mit:              Astro, statisch
+  Schriften:                Source Serif 4, IBM Plex Sans
+                            selbst ausgeliefert, nichts von fremden Servern
+  JavaScript:               kein Gramm
+  Cookies:                  keine
+  Tracker:                  keine
+  Einwilligungsdialog:      dadurch ueberfluessig
+  Quelltext:                github.com/ftrauernicht
+
+
+                    /* ABSEITS */
+
+  Der Raspberry Pi von 2012 laeuft immer noch.
+  Der 3D-Drucker druckt Halterungen, keine Drachen.
+  Und irgendwo hier liegt ein Cache.
