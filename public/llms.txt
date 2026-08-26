@@ -1,29 +1,52 @@
 # Frank Trauernicht
 
 > Senior Software Engineer aus Ostfriesland, Deutschland. C# und .NET seit 2011.
-> Architektur und Modernisierung gewachsener Systeme. Sieben Jahre lang Mitgruender
-> und Geschaeftsfuehrer eines eigenen Softwareunternehmens mit einem Team von zwoelf
-> Personen. Schwerpunkt heute: Architektur und Modernisierung gewachsener Systeme.
+> Architektur und Modernisierung gewachsener Systeme, Auslieferung und Betrieb.
+> Sieben Jahre lang Mitgruender und Geschaeftsfuehrer eines eigenen
+> Softwareunternehmens mit einem Team von zwoelf Personen, heute wieder als
+> Entwickler taetig.
+
+> Senior software engineer based in East Frisia, northern Germany. C# and .NET
+> since 2011. Architecture and modernisation of long-lived systems, delivery and
+> operations. Seven years as co-founder and managing director of his own software
+> company with a team of twelve, now back in engineering.
 
 ## Kurzprofil
 
-- Rolle: Senior Software Engineer, festangestellt
+- Rolle: Senior Software Engineer, festangestellt seit Juli 2026
 - Schwerpunkt: C#, .NET, Softwarearchitektur, Modernisierung von Bestandssystemen
 - Auslieferung: CI/CD, Docker und Compose, Build-Pipelines, eigene Werkzeuge;
-  bei Leanetec allein verantwortlich fuer Build, Rollout und Werkzeugkette
+  im eigenen Unternehmen allein verantwortlich fuer Build, Rollout und Werkzeugkette
 - Betrieb: Cloud und On-Premises, auch in regulierten Umgebungen
 - Sicherheit: OWASP-orientierte Reviews und Scans, kein Penetration Tester
 - Fuehrung: sieben Jahre Geschaeftsfuehrung, Team von zwoelf Personen
-- Ausbildung: Fachinformatiker Anwendungsentwicklung, bewusst kein Studium
+- Ausbildung: Abitur, dann bewusst Fachinformatiker Anwendungsentwicklung statt Studium
+- Lehre: ueber zwoelf Auszubildende, mehrere davon Jahrgangsbeste
 - Ort: Ostfriesland, Deutschland, remote
 - Sprachen: Deutsch, Englisch, Plattdeutsch
 
-## Seiten
+## Profile at a glance
+
+- Role: senior software engineer, employed since July 2026
+- Focus: C#, .NET, software architecture, modernisation of long-lived systems
+- Delivery: CI/CD, Docker and Compose, build pipelines, custom tooling; sole
+  owner of builds, releases and tooling in his own company
+- Operations: cloud and on-premises, including regulated environments
+- Security: OWASP-oriented reviews and scans, not a penetration tester
+- Leadership: seven years as managing director, a team of twelve
+- Education: Abitur, then a deliberate choice of an apprenticeship over a degree
+- Teaching: more than twelve apprentices, several top of their year
+- Location: East Frisia, Germany, remote
+- Languages: German, English, Low German
+
+## Seiten / Pages
 
 - [Profil, deutsch](https://frank-trauernicht.de/)
-- [Profil, englisch](https://frank-trauernicht.de/en/)
+- [Profile, English](https://frank-trauernicht.de/en/)
 - [Impressum](https://frank-trauernicht.de/impressum/)
 - [Datenschutz](https://frank-trauernicht.de/datenschutz/)
+- [Legal notice](https://frank-trauernicht.de/en/imprint/)
+- [Privacy](https://frank-trauernicht.de/en/privacy/)
 
 ## Profile
 
@@ -31,6 +54,6 @@
 - LinkedIn: https://www.linkedin.com/in/frank-trauernicht/
 - XING: https://www.xing.com/profile/Frank_Trauernicht
 
-## Kontakt
+## Kontakt / Contact
 
 mail@frank-trauernicht.de
