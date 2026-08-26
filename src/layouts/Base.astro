@@ -28,6 +28,27 @@ const enPath = content.lang === 'en' ? path : altPath;
 const pageTitle = title ?? content.meta.title;
 const pageDescription = description ?? content.meta.description;
 
+const sourceHint =
+  content.lang === 'de'
+    ? `<!--
+      Moin.
+
+      Wer den Quelltext liest, sucht meistens etwas.
+      Der Anfang steht in /humans.txt
+
+      Und weil du schon da bist: kein Framework im Browser, kein Tracker,
+      keine Cookies. Was du hier siehst, ist HTML und eine Datei CSS.
+    -->`
+    : `<!--
+      Moin.
+
+      People who read the source are usually looking for something.
+      It starts in /humans.txt
+
+      And while you are here: no framework in the browser, no tracker,
+      no cookies. What you see is HTML and one CSS file.
+    -->`;
+
 const person = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
@@ -124,20 +145,12 @@ const person = {
   </head>
 
   <body>
-    <!--
-      Moin.
-
-      Wer den Quelltext liest, sucht meistens etwas. Bitte sehr:
-      der Cache liegt unter /cache/
-
-      Und weil du schon da bist: kein Framework im Browser, kein Tracker,
-      keine Cookies. Was du hier siehst, ist HTML und eine Datei CSS.
-    -->
+    <Fragment set:html={sourceHint} />
     <a class="skip-link" href="#main">{content.skipLink}</a>
 
     <div class="wrap">
       <div class="topbar">
-        <a class="lang-switch" href={content.otherLang.href} hreflang={content.otherLang.code} aria-label={content.otherLang.aria}>
+        <a class="lang-switch" href={altPath} hreflang={content.otherLang.code} aria-label={content.otherLang.aria}>
           {content.otherLang.label}
         </a>
       </div>

@@ -22,4 +22,11 @@
 
   Der Raspberry Pi von 2012 laeuft immer noch.
   Der 3D-Drucker druckt Halterungen, keine Drachen.
-  Und irgendwo hier liegt ein Cache.
+
+
+                    /* CACHE */
+
+  Du hast den Anfang gefunden. Weiter geht es unter /cache/
+  In English:                                    /en/cache/
+
+  Mitbringen musst du nichts. Es ist ohnehin nichts zum Mitnehmen da.

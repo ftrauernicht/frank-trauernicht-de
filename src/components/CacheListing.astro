@@ -1,0 +1,196 @@
+---
+import type { CacheContent } from '../content/cache';
+
+interface Props {
+  cache: CacheContent;
+}
+
+const { cache } = Astro.props;
+
+// Hinweise sind beim Geocaching seit jeher ROT13. Hier im Code gedreht, damit
+// im Klartext nichts danebengeht.
+const rot13 = (s: string) =>
+  s.replace(/[a-z]/gi, (c) => {
+    const base = c <= 'Z' ? 65 : 97;
+    return String.fromCharCode(((c.charCodeAt(0) - base + 13) % 26) + base);
+  });
+
+const hint = rot13(cache.hintPlain);
+
+const logMail =
+  'mailto:mail@frank-trauernicht.de' +
+  '?subject=' +
+  encodeURIComponent(cache.logSubject) +
+  '&body=' +
+  encodeURIComponent(cache.logBody);
+---
+
+<main id="main" class="wrap">
+  <article class="legal cache">
+    <p class="cache__code">{cache.code}</p>
+    <h1>{cache.h1}</h1>
+
+    <p>
+      {cache.introBefore}<a href="/humans.txt">{cache.humansLabel}</a>{cache.introAfter}
+    </p>
+
+    <dl class="cache__listing">
+      {
+        cache.listing.map(([label, value]) => (
+          <>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </>
+        ))
+      }
+    </dl>
+
+    <p class="cache__aside">{cache.aside}</p>
+
+    <ul class="cache__attrs">
+      {cache.attributes.map((a) => <li>{a}</li>)}
+    </ul>
+
+    <details class="cache__details">
+      <summary>{cache.hintSummary}</summary>
+      <p class="cache__rot"><code>{hint}</code></p>
+      <details>
+        <summary>{cache.rotSummary}</summary>
+        <p class="cache__rot">
+          <code>echo '{hint}' | tr 'A-Za-z' 'N-ZA-Mn-za-m'</code>
+        </p>
+        <p>{cache.hintPlain}</p>
+      </details>
+    </details>
+
+    <h2>{cache.logHeading}</h2>
+    <p>{cache.logIntro}</p>
+    <p>
+      <a class="cache__log" href={logMail}>{cache.logButton}</a>
+    </p>
+
+    <h2>{cache.realHeading}</h2>
+    <p>{cache.realText}</p>
+
+    <p class="cache__other" lang={cache.otherLang}>{cache.otherNote}</p>
+
+    <a class="back-home" href={cache.backHref}>{cache.backHome}</a>
+  </article>
+</main>
+
+<style>
+  .cache__code {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+
+  .cache__listing {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 0.4rem 1.25rem;
+    margin: 2rem 0 1rem;
+    padding: 1.25rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 3px;
+    background: var(--bg-sunk);
+    font-size: 0.9375rem;
+  }
+
+  .cache__listing dt {
+    color: var(--text-muted);
+  }
+
+  .cache__listing dd {
+    margin: 0;
+    font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Menlo, monospace;
+    font-size: 0.875rem;
+  }
+
+  .cache__aside {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+
+  .cache__attrs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+  }
+
+  .cache__attrs li {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--rule);
+    border-radius: 2rem;
+    padding: 0.3rem 0.75rem;
+    margin: 0;
+  }
+
+  .cache__details {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 2rem;
+    background: var(--bg-card);
+  }
+
+  .cache__details summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .cache__details details {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .cache__details p {
+    margin: 0.75rem 0 0;
+  }
+
+  .cache__rot code {
+    font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Menlo, monospace;
+    font-size: 0.8125rem;
+    background: var(--bg-sunk);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 0.2rem 0.45rem;
+    overflow-wrap: anywhere;
+  }
+
+  .cache__log {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 2rem;
+    padding: 0.5rem 1.15rem;
+    text-decoration: none;
+  }
+
+  .cache__log:hover,
+  .cache__log:focus-visible {
+    color: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+
+  .cache__other {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+    margin-top: 2rem;
+  }
+</style>

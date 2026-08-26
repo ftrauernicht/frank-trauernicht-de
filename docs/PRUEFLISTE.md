@@ -25,7 +25,8 @@ Abzuhaken gegen die Produktionsdomain, nicht gegen `localhost`.
 - [ ] `/humans.txt` erreichbar, `rel="author"` im Kopf verweist darauf
 - [ ] Eine erfundene URL liefert die eigene 404-Seite, nicht die des Anbieters
 - [ ] `/cache/` traegt `noindex`, fehlt in Sitemap, robots.txt und llms.txt
-- [ ] Die Kette traegt: Header → humans.txt → Quelltext → /cache/
+- [ ] Die Kette traegt: Quelltext → `humans.txt` → `/cache/`, in beiden Sprachen
+- [ ] Der Quelltextkommentar nennt `/cache/` **nicht** direkt
 
 ## Leistung und Zugänglichkeit
 

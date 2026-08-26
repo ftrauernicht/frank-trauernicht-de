@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import CacheListing from '../../components/CacheListing.astro';
+import { en } from '../../content/en';
+import { cacheEn } from '../../content/cache';
+---
+
+<Base
+  content={en}
+  path="/en/cache/"
+  altPath="/cache/"
+  title={cacheEn.metaTitle}
+  description={cacheEn.metaDescription}
+  noindex
+>
+  <CacheListing cache={cacheEn} />
+</Base>
