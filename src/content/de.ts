@@ -108,7 +108,7 @@ export const de: Content = {
     heading: 'Werdegang',
     stations: [
       {
-        period: 'seit 2026',
+        period: 'seit Juli 2026',
         role: 'Senior Software Engineer',
         note: 'Festanstellung.',
       },

@@ -108,7 +108,7 @@ export const en: Content = {
     heading: 'Career',
     stations: [
       {
-        period: 'since 2026',
+        period: 'since July 2026',
         role: 'Senior Software Engineer',
         note: 'Employed.',
       },
