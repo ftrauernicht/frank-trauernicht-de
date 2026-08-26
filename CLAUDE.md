@@ -44,8 +44,13 @@ das eine bewusste Entscheidung und keine Nebenwirkung.
 
 ## Das Versteck
 
-Die Kette lautet: Antwort-Header `X-Moin` → `humans.txt` → Quelltextkommentar im `<body>` →
-`/cache/`. Wer eine Stufe entfernt, zerreisst sie.
+Es gibt **drei unabhaengige Tueren** zu `/cache/`, keine Kette: den Quelltextkommentar im
+`<body>` (nennt den Pfad direkt, das ist der Hauptweg), den Antwort-Header `X-Moin` und die
+`humans.txt`. Die beiden letzten sind keine Vorstufen, sondern eigenstaendige Fundstuecke —
+die `humans.txt` ist vor allem das Kolophon der Seite.
+
+Auf `/cache/` darf deshalb **nichts stehen, was eine Reihenfolge behauptet**. Wer dort
+"drei Stationen" schreibt, luegt ueber die eigene Seite.
 
 `/cache/` traegt `noindex` und ist per `filter` aus der Sitemap ausgenommen. **Nicht** in die
 `robots.txt` aufnehmen — ein `Disallow` verraet den Pfad an jeden, der die Datei aufruft.
