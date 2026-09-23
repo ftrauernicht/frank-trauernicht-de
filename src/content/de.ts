@@ -30,8 +30,8 @@ export const de: Content = {
       id: 'haltung',
       heading: 'Wie ich arbeite',
       paragraphs: [
-        'Ich weiß recht gut, was ich kann. Nützlicher finde ich, genau zu wissen, was ich nicht kann — und wer es besser kann als ich. Was mir fehlt, lerne ich am Gegenstand. Wo jemand anderes schneller ist, hole ich ihn dazu, statt es mir selbst zu beweisen.',
-        'Gutes Miteinander ist mir dabei nicht nebensächlich. Offene Kritik gehört dazu, in beide Richtungen — ich nehme sie gern entgegen und halte sie für den kürzesten Weg zu einer besseren Lösung.',
+        'Ich weiß recht gut, was ich kann. Nützlicher finde ich, genau zu wissen, was ich nicht kann und wer es besser kann als ich. Was mir fehlt, lerne ich am Gegenstand. Wo jemand anderes schneller ist, hole ich ihn dazu, statt es mir selbst zu beweisen.',
+        'Gutes Miteinander ist mir dabei nicht nebensächlich. Offene Kritik gehört dazu, in beide Richtungen. Ich nehme sie gern entgegen und halte sie für den kürzesten Weg zu einer besseren Lösung.',
       ],
     },
     {
@@ -42,7 +42,7 @@ export const de: Content = {
       ],
       listIntro: 'Einiges davon, ohne Namen:',
       list: [
-        'Auswertung von Millionen Positionsmeldungen aus dem Schiffsverkehr pro Tag — Routen rekonstruieren, Bewegungsmuster erkennen.',
+        'Auswertung von Millionen Positionsmeldungen aus dem Schiffsverkehr pro Tag: Routen rekonstruieren, Bewegungsmuster erkennen.',
         'Meldewesen für Vorfälle an Bord, von der Erfassung bis zum ausgelieferten Bericht.',
         'Ein Dokumentenmanagementsystem.',
         'Ein Versicherungsfachverfahren mit Fallakten und Kostenübersichten.',
@@ -58,7 +58,7 @@ export const de: Content = {
       id: 'architektur',
       heading: 'Architektur',
       paragraphs: [
-        'Monolith, modularer Monolith, Microservices und alles Improvisierte dazwischen: Diese Strukturen gibt es nun einmal, und man sucht sich selten aus, welche vor einem steht. Die Arbeit besteht darin, mit der umgehen zu können, die es geworden ist — mit der selbst entworfenen genauso wie mit der geerbten.',
+        'Monolith, modularer Monolith, Microservices und alles Improvisierte dazwischen: Diese Strukturen gibt es nun einmal, und man sucht sich selten aus, welche vor einem steht. Die Arbeit besteht darin, mit der umgehen zu können, die es geworden ist: mit der selbst entworfenen genauso wie mit der geerbten.',
         'Vor der Entscheidung steht bei mir das Lesen. Was ein System heute tut, steht selten dort, wo es dokumentiert ist; es steht im Code, in den Daten und in den Gewohnheiten derer, die damit arbeiten. Erst danach lässt sich sagen, was bleiben kann und was ersetzt gehört.',
       ],
     },
@@ -66,7 +66,7 @@ export const de: Content = {
       id: 'auslieferung',
       heading: 'Bauen, prüfen, ausliefern',
       paragraphs: [
-        'Diese Seite der Arbeit hat mich von Anfang an interessiert. Schon während der Ausbildung habe ich Werkzeuge und Abläufe mit aufgebaut und später vorangetrieben — und in meinem eigenen Unternehmen war ich der Einzige, der dafür zuständig war. Bauen, Testen, Ausliefern und alles, was daran hängt, lag bei mir.',
+        'Diese Seite der Arbeit hat mich von Anfang an interessiert. Schon während der Ausbildung habe ich Werkzeuge und Abläufe mit aufgebaut und später vorangetrieben. In meinem eigenen Unternehmen war ich der Einzige, der dafür zuständig war. Bauen, Testen, Ausliefern und alles, was daran hängt, lag bei mir.',
         'In der Praxis heißt das: Container und Compose-Verbünde für Entwicklung und Betrieb, Pipelines, die bei jedem Commit bauen und prüfen, und ein kontrollierter Weg, Aktualisierungen zu Kunden zu bringen, statt sie zu verteilen und zu hoffen. Wo kein passendes Werkzeug da war, habe ich eins gebaut — meist etwas Kleines, das eine wiederkehrende Handgriffsfolge überflüssig macht.',
         'Dazu die unspektakulären Dinge, an denen sich entscheidet, ob mehrere Leute an derselben Sache arbeiten können: Formatierung und Linting automatisch statt im Review, Namenskonventionen, die auch in altem Code noch gelten, und ein Ticketsystem, in dem man drei Jahre später noch nachvollziehen kann, warum etwas so ist.',
         'Werkzeuge über die Jahre: Git und, wo es noch sein musste, Subversion. Jenkins und GitHub Actions. Docker und Compose. Jira, Confluence und davor Bugzilla.',
@@ -76,7 +76,7 @@ export const de: Content = {
       id: 'betrieb',
       heading: 'Betrieb',
       paragraphs: [
-        'Manches, was ich baue, läuft in der Cloud, manches auf Kundeninfrastruktur — regulierte Branchen, On-Premises-Netze, Umgebungen, in denen die Daten das Haus nicht verlassen dürfen. Das Zweite lehrt einen, was das Erste verbirgt: Dort kümmert sich niemand still um Sicherungen, Zertifikate, Überwachung und Ausfallsicherheit.',
+        'Manches, was ich baue, läuft in der Cloud, manches auf Kundeninfrastruktur: regulierte Branchen, On-Premises-Netze, Umgebungen, in denen die Daten das Haus nicht verlassen dürfen. Das Zweite lehrt einen, was das Erste verbirgt: Dort kümmert sich niemand still um Sicherungen, Zertifikate, Überwachung und Ausfallsicherheit.',
       ],
     },
     {
@@ -91,9 +91,9 @@ export const de: Content = {
       id: 'verantwortung',
       heading: 'Was aus sieben Jahren Führung geblieben ist',
       paragraphs: [
-        'Sieben Jahre lang habe ich ein Softwareunternehmen geführt, das ich mitgegründet habe, zuletzt mit einem Team von zwölf Leuten. Meine Hälfte der Geschäftsführung war die technische und vor allem die menschliche: Ideen finden, die sich lohnen, daraus belastbare Pläne machen, mitbauen — und genug Struktur halten, dass die anderen arbeiten konnten, ohne auf mich zu warten.',
+        'Sieben Jahre lang habe ich ein Softwareunternehmen geführt, das ich mitgegründet habe, zuletzt mit einem Team von zwölf Leuten. Meine Hälfte der Geschäftsführung war die technische und vor allem die menschliche: Ideen finden, die sich lohnen, daraus belastbare Pläne machen, mitbauen, und genug Struktur halten, dass die anderen arbeiten konnten, ohne auf mich zu warten.',
         'Das hat verändert, wie ich entwickle. Wenn man drei Jahre später noch da ist und pflegt, was man entschieden hat, hört Architektur auf, eine Geschmacksfrage zu sein.',
-        'Der planende Teil ist mitgekommen: Schätzungen, die halten. Umfänge, die man kürzen kann, ohne dass alles zusammenfällt. Und die Angewohnheit, in die Zahlen zu sehen — eine technische Entscheidung ist eine Kostenstruktur, und ich kann sie denen erklären, die sie unterschreiben.',
+        'Der planende Teil ist mitgekommen: Schätzungen, die halten. Umfänge, die man kürzen kann, ohne dass alles zusammenfällt. Und die Angewohnheit, in die Zahlen zu sehen: eine technische Entscheidung ist eine Kostenstruktur, und ich kann sie denen erklären, die sie unterschreiben.',
       ],
     },
     {
@@ -101,14 +101,14 @@ export const de: Content = {
       heading: 'Arbeiten mit KI',
       paragraphs: [
         'KI ist ein starkes Werkzeug, und ich nutze es täglich. Was sie nicht abnimmt, ist die Verantwortung. Der Code, der am Ende ausgeliefert wird, ist meiner; ich muss ihn erklären und für ihn geradestehen können.',
-        'Was sich nicht prüfen lässt, ist keine Arbeitserleichterung, sondern eine spätere Rechnung.',
+        'Was sich nicht prüfen lässt, ist eine Rechnung, die erst später kommt.',
       ],
     },
     {
       id: 'lernen',
       heading: 'Lernen und weitergeben',
       paragraphs: [
-        'Nach dem Abitur habe ich mich bewusst gegen ein Studium entschieden und eine dreijährige Ausbildung gemacht. Ich wollte Dinge können, nicht jahrelang über sie hören — daran hat sich wenig geändert: Was ich brauche, lerne ich am Gegenstand.',
+        'Nach dem Abitur habe ich mich bewusst gegen ein Studium entschieden und eine dreijährige Ausbildung gemacht. Ich wollte Dinge können, nicht jahrelang über sie hören. Daran hat sich wenig geändert: Was ich brauche, lerne ich am Gegenstand.',
         'Ausgebildet habe ich seither fast durchgehend selbst: über zwölf Auszubildende in den vergangenen Jahren, mehrere von ihnen Jahrgangsbeste und bei der Freisprechung in Leer ausgezeichnet. Von den Dingen, die ich beruflich gemacht habe, ist das der Teil, der am längsten nachwirkt.',
         'Zurück geht es dahin, wo es passt. Aus einem Fork mit Prüfungsmaterial für die Fachinformatiker Anwendungsentwicklung ist bei mir eine eigene Themensammlung geworden: Kapitel, Diagramme, Prüfungsfragen und Spickzettel, deutsch und englisch. Dazu ein projektbasierter JavaScript-Kurs für Leute, die gerade anfangen.',
       ],
@@ -147,7 +147,7 @@ export const de: Content = {
       {
         name: 'fachinformatiker-anwendungsentwicklung',
         url: 'https://github.com/ftrauernicht/fachinformatiker-anwendungsentwicklung',
-        text: 'Themensammlung für die Abschlussprüfung Teil 2 der Fachinformatiker Anwendungsentwicklung — Kapitel, Diagramme, Prüfungsfragen und Spickzettel, deutsch und englisch. Aus einem Fork zu einer eigenen Materialsammlung ausgebaut.',
+        text: 'Themensammlung für die Abschlussprüfung Teil 2 der Fachinformatiker Anwendungsentwicklung: Kapitel, Diagramme, Prüfungsfragen und Spickzettel, deutsch und englisch. Aus einem Fork zu einer eigenen Materialsammlung ausgebaut.',
       },
       {
         name: 'dotnet-architecture-hexagonal-template',
@@ -162,7 +162,7 @@ export const de: Content = {
       {
         name: 'raspi-google-drive-sync',
         url: 'https://github.com/ftrauernicht/raspi-google-drive-sync',
-        text: 'Sicherung nach Google Drive auf einem Raspberry Pi der ersten Generation — 512 MB Arbeitsspeicher, ARMv6, und die Aufgabe, sich nach einem Fehler selbst wieder einzufangen.',
+        text: 'Sicherung nach Google Drive auf einem Raspberry Pi der ersten Generation: 512 MB Arbeitsspeicher, ARMv6, und die Aufgabe, sich nach einem Fehler selbst wieder einzufangen.',
       },
       {
         name: 'ha-automation-cookbook',

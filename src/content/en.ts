@@ -30,8 +30,8 @@ export const en: Content = {
       id: 'how-i-work',
       heading: 'How I work',
       paragraphs: [
-        'I know reasonably well what I am good at. I have found it more useful to know precisely where I am not — and who is better at it than I am. What I lack, I learn on the thing itself. Where someone else is faster, I bring them in rather than prove a point to myself.',
-        'Working well together is not a side concern for me. Open criticism is part of it, in both directions — I take it gladly, and I think it is the shortest path to a better solution.',
+        'I know reasonably well what I am good at. I have found it more useful to know precisely where I am not, and who is better at it than I am. What I lack, I learn on the thing itself. Where someone else is faster, I bring them in rather than prove a point to myself.',
+        'Working well together is not a side concern for me. Open criticism is part of it, in both directions. I take it gladly, and I think it is the shortest path to a better solution.',
       ],
     },
     {
@@ -42,7 +42,7 @@ export const en: Content = {
       ],
       listIntro: 'Some of it, without names:',
       list: [
-        'Processing millions of vessel position reports per day — reconstructing routes, detecting movement patterns.',
+        'Processing millions of vessel position reports per day: reconstructing routes, detecting movement patterns.',
         'Incident reporting for events on board, from capture through to the delivered report.',
         'A document management system.',
         'An insurance line-of-business system handling case files and cost overviews.',
@@ -58,7 +58,7 @@ export const en: Content = {
       id: 'architecture',
       heading: 'Architecture',
       paragraphs: [
-        'Monolith, modular monolith, microservices, and everything improvised in between: these structures exist, and you rarely get to choose which one is in front of you. The work is being able to handle whichever it turns out to be — the one you designed as much as the one you inherited.',
+        'Monolith, modular monolith, microservices, and everything improvised in between: these structures exist, and you rarely get to choose which one is in front of you. The work is being able to handle whichever it turns out to be: the one you designed as much as the one you inherited.',
         'Before the decision comes the reading. What a system does today is rarely written where it is documented; it is in the code, in the data, and in the habits of the people who work with it. Only after that can you say what can stay and what has to be replaced.',
       ],
     },
@@ -66,7 +66,7 @@ export const en: Content = {
       id: 'delivery',
       heading: 'Building, checking, shipping',
       paragraphs: [
-        'This side of the work has interested me from the start. I helped build up tooling and process during my apprenticeship and pushed it forward later — and in my own company I was the only one responsible for it. Building, testing, shipping and everything hanging off that was mine.',
+        'This side of the work has interested me from the start. I helped build up tooling and process during my apprenticeship and pushed it forward later. In my own company I was the only one responsible for it. Building, testing, shipping and everything hanging off that was mine.',
         'In practice that means containers and Compose stacks for development and for production, pipelines that build and check on every commit, and a controlled way of getting updates to customers rather than distributing them and hoping. Where no suitable tool existed I built one — usually something small that removes a recurring sequence of manual steps.',
         'Plus the unglamorous things that decide whether several people can work on the same thing at all: formatting and linting automated rather than argued about in review, naming conventions that still hold in old code, and an issue tracker where you can still work out three years later why something is the way it is.',
         'Tools over the years: Git and, where it still had to be, Subversion. Jenkins and GitHub Actions. Docker and Compose. Jira, Confluence, and Bugzilla before them.',
@@ -76,7 +76,7 @@ export const en: Content = {
       id: 'operations',
       heading: 'Running systems',
       paragraphs: [
-        'Some of what I build runs in the cloud, some on customer infrastructure — regulated industries, on-premises networks, environments where the data is not allowed to leave the building. The second teaches you what the first hides: nothing there quietly handles backups, certificates, monitoring, or failover for you.',
+        'Some of what I build runs in the cloud, some on customer infrastructure: regulated industries, on-premises networks, environments where the data is not allowed to leave the building. The second teaches you what the first hides: nothing there quietly handles backups, certificates, monitoring, or failover for you.',
       ],
     },
     {
@@ -93,7 +93,7 @@ export const en: Content = {
       paragraphs: [
         'For seven years I ran a software company I co-founded, latterly with a team of twelve. My half of it was the technical one and, above all, the human one: finding the ideas worth pursuing, turning them into plans that hold, building alongside the team, and keeping things structured enough that people could work without waiting on me.',
         'It changed how I engineer. When you are still there three years later maintaining what you decided, architecture stops being a matter of taste.',
-        'The planning half came with me: estimates that hold. Scope that can be cut without collapsing. And the habit of reading the numbers — a technical decision is a cost structure, and I can make that case to the people who sign for it.',
+        'The planning half came with me: estimates that hold. Scope that can be cut without collapsing. And the habit of reading the numbers: a technical decision is a cost structure, and I can make that case to the people who sign for it.',
       ],
     },
     {
@@ -101,7 +101,7 @@ export const en: Content = {
       heading: 'Working with AI',
       paragraphs: [
         'AI is a powerful tool and I use it daily. What it does not take off your hands is responsibility. The code that ships is mine; I have to be able to explain it and stand behind it.',
-        'Anything that cannot be verified is not saved effort — it is an invoice arriving later.',
+        'Anything that cannot be verified is an invoice that arrives later.',
       ],
     },
     {
@@ -147,7 +147,7 @@ export const en: Content = {
       {
         name: 'fachinformatiker-anwendungsentwicklung',
         url: 'https://github.com/ftrauernicht/fachinformatiker-anwendungsentwicklung',
-        text: 'Study material for the final examination of the German application developer qualification — chapters, diagrams, exam questions and cheat sheets, in German and English. Grown from a fork into a body of material of its own.',
+        text: 'Study material for the final examination of the German application developer qualification: chapters, diagrams, exam questions and cheat sheets, in German and English. Grown from a fork into a body of material of its own.',
       },
       {
         name: 'dotnet-architecture-hexagonal-template',
@@ -162,7 +162,7 @@ export const en: Content = {
       {
         name: 'raspi-google-drive-sync',
         url: 'https://github.com/ftrauernicht/raspi-google-drive-sync',
-        text: 'Backups to Google Drive on a first-generation Raspberry Pi — 512 MB of memory, ARMv6, and the job of recovering by itself when something goes wrong.',
+        text: 'Backups to Google Drive on a first-generation Raspberry Pi: 512 MB of memory, ARMv6, and the job of recovering by itself when something goes wrong.',
       },
       {
         name: 'ha-automation-cookbook',
