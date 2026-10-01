@@ -121,6 +121,7 @@ export const de: Content = {
       {
         period: 'seit Juli 2026',
         role: 'Senior Software Engineer',
+        org: 'IT Titans GmbH',
         note: 'Festanstellung.',
       },
       {

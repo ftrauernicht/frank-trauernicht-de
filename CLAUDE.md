@@ -30,8 +30,10 @@ das eine bewusste Entscheidung und keine Nebenwirkung.
 ## Inhaltliche Vorgaben
 
 - **Kein Emoji.** Nirgends.
-- **Kein aktueller Arbeitgeber.** Der Name steht auf LinkedIn, nicht hier. Kein
-  `worksFor` im JSON-LD.
+- **Der aktuelle Arbeitgeber (IT Titans GmbH) steht offen da**, seit Frank die Probezeit
+  hinter sich hat (Oktober 2026): im Werdegang und als `worksFor` im JSON-LD. Vorher war
+  er bewusst nicht genannt. Er bleibt dort Name und Station; kein Werbetext, kein Angebot
+  im Namen des Arbeitgebers (Regel 1 gilt weiter).
 - **Keine Kundennamen.** Projekte werden als Problemklassen beschrieben.
 - **Keine erfundenen Kennzahlen.** Belegt sind: zwölf Personen, sieben Jahre eigene
   Firma, .NET seit 2011.
