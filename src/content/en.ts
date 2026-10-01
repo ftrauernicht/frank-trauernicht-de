@@ -18,7 +18,7 @@ export const en: Content = {
   hero: {
     name: 'Frank Trauernicht',
     role: 'Senior Software Engineer',
-    facts: ['C# and .NET since 2011', 'East Frisia, Germany — remote'],
+    facts: ['C# and .NET since 2011', 'AI-assisted development', 'East Frisia, Germany — remote'],
     lead: [
       `I have been building software in C# and .NET for ${jahreEn} years. Mostly where something is already running and is meant to keep running: long-lived systems, large volumes of data, environments with constraints.`,
     ],
@@ -102,6 +102,8 @@ export const en: Content = {
       paragraphs: [
         'AI is a powerful tool and I use it daily. What it does not take off your hands is responsibility. The code that ships is mine; I have to be able to explain it and stand behind it.',
         'Anything that cannot be verified is an invoice that arrives later.',
+        'So I build the guardrails myself. One tool turns the commits of a period into blocks of time and drafts the time entries in my own style. Where there is a gap it asks instead of guessing, and nothing is booked without my approval. Another reads the state of pull requests and tickets live instead of asserting it from memory. It exists because exactly that went wrong once.',
+        'The interface of the company portal is built for scripts and AI agents as well: personal, revocable keys instead of an application of its own. My .NET template carries a guide for coding agents, and architecture tests and decision records keep rules from being quietly worked around.',
       ],
     },
     {
@@ -122,7 +124,7 @@ export const en: Content = {
         period: 'since July 2026',
         role: 'Senior Software Engineer',
         org: 'IT Titans GmbH',
-        note: 'Employed.',
+        note: 'I build the internal company portal and the tooling around it: a modular monolith on .NET and Next.js in Azure, with architecture tests, a pipeline and a public API. Alongside that, tools that make AI assistance verifiable in daily work.',
       },
       {
         period: '2019 – 2026',
@@ -159,6 +161,11 @@ export const en: Content = {
         name: 'javascript-course',
         url: 'https://github.com/ftrauernicht/javascript-course',
         text: 'A project-based JavaScript course for beginners, from the first script to small applications.',
+      },
+      {
+        name: 'csharp-oop-course',
+        url: 'https://github.com/ftrauernicht/csharp-oop-course',
+        text: 'Project-based C# course on object-oriented programming, from a first class to inheritance, polymorphism and interfaces. In German and English, and every course project is built and tested in CI.',
       },
       {
         name: 'raspi-google-drive-sync',

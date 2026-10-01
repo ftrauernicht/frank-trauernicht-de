@@ -18,7 +18,7 @@ export const de: Content = {
   hero: {
     name: 'Frank Trauernicht',
     role: 'Senior Software Engineer',
-    facts: ['C# und .NET seit 2011', 'Ostfriesland, remote'],
+    facts: ['C# und .NET seit 2011', 'KI-gestützte Entwicklung', 'Ostfriesland, remote'],
     lead: [
       `Ich baue seit ${jahreDe} Jahren Software in C# und .NET. Meistens dort, wo schon etwas läuft, das weiterlaufen soll: gewachsene Systeme, große Datenmengen, Umgebungen mit Auflagen.`,
     ],
@@ -102,6 +102,8 @@ export const de: Content = {
       paragraphs: [
         'KI ist ein starkes Werkzeug, und ich nutze es täglich. Was sie nicht abnimmt, ist die Verantwortung. Der Code, der am Ende ausgeliefert wird, ist meiner; ich muss ihn erklären und für ihn geradestehen können.',
         'Was sich nicht prüfen lässt, ist eine Rechnung, die erst später kommt.',
+        'Deshalb baue ich die Leitplanken selbst. Ein Werkzeug bildet aus den Commits eines Zeitraums Zeitblöcke und entwirft die Einträge in meinem Stil. Bei Lücken fragt es nach, statt zu raten, und gebucht wird nichts ohne meine Freigabe. Ein anderes liest den Stand von Pull Requests und Tickets live aus, statt ihn aus dem Gedächtnis zu behaupten. Es entstand, nachdem genau das schiefgegangen war.',
+        'Die Schnittstelle des Firmenportals ist ausdrücklich auch für Skripte und KI-Agenten gebaut: persönliche, widerrufbare Schlüssel statt einer eigenen Anwendung. Mein .NET-Template enthält einen Leitfaden für Coding-Agenten, und Architekturtests sowie Entscheidungsprotokolle sorgen dafür, dass Regeln nicht still umgangen werden.',
       ],
     },
     {
@@ -122,7 +124,7 @@ export const de: Content = {
         period: 'seit Juli 2026',
         role: 'Senior Software Engineer',
         org: 'IT Titans GmbH',
-        note: 'Festanstellung.',
+        note: 'Ich baue das interne Firmenportal und die Werkzeuge darum herum: ein modularer Monolith auf .NET und Next.js in Azure, mit Architekturtests, Pipeline und öffentlicher API. Dazu eigene Werkzeuge, mit denen sich KI-Unterstützung prüfbar in den Arbeitsalltag einbauen lässt.',
       },
       {
         period: '2019 – 2026',
@@ -159,6 +161,11 @@ export const de: Content = {
         name: 'javascript-course',
         url: 'https://github.com/ftrauernicht/javascript-course',
         text: 'Projektbasierter JavaScript-Kurs für Anfänger, vom ersten Skript bis zu kleinen Anwendungen.',
+      },
+      {
+        name: 'csharp-oop-course',
+        url: 'https://github.com/ftrauernicht/csharp-oop-course',
+        text: 'Projektbasierter C#-Kurs zur Objektorientierung, von der ersten Klasse bis zu Vererbung, Polymorphie und Schnittstellen. Deutsch und englisch, jedes Kursprojekt wird in der CI gebaut und getestet.',
       },
       {
         name: 'raspi-google-drive-sync',
