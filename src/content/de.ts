@@ -51,7 +51,7 @@ export const de: Content = {
         'Veranstaltungsverwaltung mit Ticketverkauf über Stripe und Sitzplatzbuchung im dreidimensionalen Saalplan.',
       ],
       afterList: [
-        'Die maritime Ecke war eine gute Zeit, und AIS-Daten in dieser Größenordnung sind ein schönes Problem. Sie gehört zu meiner Geschichte — sie ist nicht ihr Fundament.',
+        'Die maritime Ecke war eine gute Zeit, und AIS-Daten in dieser Größenordnung sind ein schönes Problem. Sie ist Teil meiner Geschichte, nicht ihr Fundament.',
       ],
     },
     {
@@ -67,7 +67,7 @@ export const de: Content = {
       heading: 'Bauen, prüfen, ausliefern',
       paragraphs: [
         'Diese Seite der Arbeit hat mich von Anfang an interessiert. Schon während der Ausbildung habe ich Werkzeuge und Abläufe mit aufgebaut und später vorangetrieben. In meinem eigenen Unternehmen war ich der Einzige, der dafür zuständig war. Bauen, Testen, Ausliefern und alles, was daran hängt, lag bei mir.',
-        'In der Praxis heißt das: Container und Compose-Verbünde für Entwicklung und Betrieb, Pipelines, die bei jedem Commit bauen und prüfen, und ein kontrollierter Weg, Aktualisierungen zu Kunden zu bringen, statt sie zu verteilen und zu hoffen. Wo kein passendes Werkzeug da war, habe ich eins gebaut — meist etwas Kleines, das eine wiederkehrende Handgriffsfolge überflüssig macht.',
+        'In der Praxis heißt das: Container und Compose-Verbünde für Entwicklung und Betrieb, Pipelines, die bei jedem Commit bauen und prüfen, und ein kontrollierter Weg, Aktualisierungen zu Kunden zu bringen, statt sie zu verteilen und zu hoffen. Wo kein passendes Werkzeug da war, habe ich eins gebaut: meist etwas Kleines, das eine wiederkehrende Handgriffsfolge überflüssig macht.',
         'Dazu die unspektakulären Dinge, an denen sich entscheidet, ob mehrere Leute an derselben Sache arbeiten können: Formatierung und Linting automatisch statt im Review, Namenskonventionen, die auch in altem Code noch gelten, und ein Ticketsystem, in dem man drei Jahre später noch nachvollziehen kann, warum etwas so ist.',
         'Werkzeuge über die Jahre: Git und, wo es noch sein musste, Subversion. Jenkins und GitHub Actions. Docker und Compose. Jira, Confluence und davor Bugzilla.',
       ],
@@ -84,7 +84,7 @@ export const de: Content = {
       heading: 'Sicherheit',
       paragraphs: [
         'Ich bin kein Penetration Tester und gebe mich nicht als einer aus. Ich arbeite mit den OWASP-Listen, führe Scans durch, lese mich in das ein, was ich prüfen will, und habe zuletzt eine mobile Anwendung im regulierten Umfeld untersucht.',
-        'Was ich mitbringe, ist der Blick, der beim Entwurf schon fragt, wo das hier aufbricht — nicht erst beim Audit.',
+        'Was ich mitbringe, ist der Blick, der beim Entwurf schon fragt, wo das hier aufbricht, nicht erst beim Audit.',
       ],
     },
     {
@@ -183,7 +183,7 @@ export const de: Content = {
   contact: {
     heading: 'Abseits davon',
     paragraphs: [
-      'Außerhalb der Arbeit bin ich beim Geocaching unterwegs, treibe die Automatisierung meines Zuhauses weiter, als irgendjemand verlangt hat, und konstruiere und drucke in 3D. Keine Figuren — Halterungen, Ersatzteile, Dinge, die ein konkretes Problem lösen. Etwas bauen, etwas reparieren, etwas Brauchbares herstellen: derselbe Antrieb wie im Beruf, nur ohne Ticketsystem.',
+      'Außerhalb der Arbeit bin ich beim Geocaching unterwegs, treibe die Automatisierung meines Zuhauses weiter, als irgendjemand verlangt hat, und konstruiere und drucke in 3D. Keine Figuren: Halterungen, Ersatzteile, Dinge, die ein konkretes Problem lösen. Etwas bauen, etwas reparieren, etwas Brauchbares herstellen: derselbe Antrieb wie im Beruf, nur ohne Ticketsystem.',
       'Ich lebe und arbeite in Ostfriesland. Deutsch und Englisch im Beruf, Plattdeutsch, wenn jemand damit anfängt.',
     ],
     emailIntro: 'Erreichbar unter',

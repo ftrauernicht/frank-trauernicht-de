@@ -18,7 +18,7 @@ export const en: Content = {
   hero: {
     name: 'Frank Trauernicht',
     role: 'Senior Software Engineer',
-    facts: ['C# and .NET since 2011', 'AI-assisted development', 'East Frisia, Germany — remote'],
+    facts: ['C# and .NET since 2011', 'AI-assisted development', 'East Frisia, Germany, remote'],
     lead: [
       `I have been building software in C# and .NET for ${jahreEn} years. Mostly where something is already running and is meant to keep running: long-lived systems, large volumes of data, environments with constraints.`,
     ],
@@ -51,7 +51,7 @@ export const en: Content = {
         'Event management with ticket sales through Stripe and seat booking on a three-dimensional venue plan.',
       ],
       afterList: [
-        'The maritime corner was a good time, and AIS data at that scale is a pleasant problem to have. It is part of my history — it is not its foundation.',
+        'The maritime corner was a good time, and AIS data at that scale is a pleasant problem to have. It is part of my history, not its foundation.',
       ],
     },
     {
@@ -67,7 +67,7 @@ export const en: Content = {
       heading: 'Building, checking, shipping',
       paragraphs: [
         'This side of the work has interested me from the start. I helped build up tooling and process during my apprenticeship and pushed it forward later. In my own company I was the only one responsible for it. Building, testing, shipping and everything hanging off that was mine.',
-        'In practice that means containers and Compose stacks for development and for production, pipelines that build and check on every commit, and a controlled way of getting updates to customers rather than distributing them and hoping. Where no suitable tool existed I built one — usually something small that removes a recurring sequence of manual steps.',
+        'In practice that means containers and Compose stacks for development and for production, pipelines that build and check on every commit, and a controlled way of getting updates to customers rather than distributing them and hoping. Where no suitable tool existed I built one: usually something small that removes a recurring sequence of manual steps.',
         'Plus the unglamorous things that decide whether several people can work on the same thing at all: formatting and linting automated rather than argued about in review, naming conventions that still hold in old code, and an issue tracker where you can still work out three years later why something is the way it is.',
         'Tools over the years: Git and, where it still had to be, Subversion. Jenkins and GitHub Actions. Docker and Compose. Jira, Confluence, and Bugzilla before them.',
       ],
@@ -84,7 +84,7 @@ export const en: Content = {
       heading: 'Security',
       paragraphs: [
         'I am not a penetration tester and I do not present myself as one. I work with the OWASP lists, run scans, read up on whatever I am about to examine, and most recently looked at a mobile application in a regulated setting.',
-        'What I bring is the habit of asking, at design time, where this is going to break — rather than at the audit.',
+        'What I bring is the habit of asking, at design time, where this is going to break, not at the audit.',
       ],
     },
     {
@@ -183,7 +183,7 @@ export const en: Content = {
   contact: {
     heading: 'Away from the desk',
     paragraphs: [
-      'Outside work I go geocaching, push my home automation further than anyone asked for, and design and print in 3D. No figurines — brackets, replacement parts, things that solve an actual problem. Building something, repairing something, making something useful: the same drive as at work, only without a ticket system.',
+      'Outside work I go geocaching, push my home automation further than anyone asked for, and design and print in 3D. No figurines: brackets, replacement parts, things that solve an actual problem. Building something, repairing something, making something useful: the same drive as at work, only without a ticket system.',
       'I live and work in East Frisia in northern Germany. German and English at work, and Low German whenever someone starts it.',
     ],
     emailIntro: 'Reachable at',
