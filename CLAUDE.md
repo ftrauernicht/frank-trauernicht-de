@@ -35,7 +35,7 @@ das eine bewusste Entscheidung und keine Nebenwirkung.
   er bewusst nicht genannt. Er bleibt dort Name und Station; kein Werbetext, kein Angebot
   im Namen des Arbeitgebers (Regel 1 gilt weiter).
 - **Keine Kundennamen.** Projekte werden als Problemklassen beschrieben.
-- **Keine erfundenen Kennzahlen.** Belegt sind: zwölf Personen, sieben Jahre eigene
+- **Keine erfundenen Kennzahlen.** Belegt sind: bis zu dreizehn Personen bei Leanetec, bis zu zwölf bei BUSS DATA, sieben Jahre eigene
   Firma, .NET seit 2011.
 - **Maritim darf vorkommen, aber nicht tragen.** Es ist ein Teil der Geschichte, nicht
   ihr Fundament.
