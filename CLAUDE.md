@@ -176,6 +176,8 @@ automatisch auf das Baudatum zu setzen wuerde behaupten, der Text habe sich geae
 | `links.yml` | montags | externe Verweise |
 | `refresh.yml` | monatlich | Neubau, damit die Bauzeit-Werte frisch bleiben |
 
+`npm audit` läuft über `scripts/audit.mjs` mit einer Ausnahmeliste: Ein hoher Fund ohne Eintrag dort bricht die CI. Jede Ausnahme trägt Grund und Datum und fällt weg, sobald es einen Patch gibt. Aktuell steht dort `http-cache-semantics` (kein Patch verfügbar, nur Bauzeit über astro).
+
 `smoke.yml` ist der wichtigste. Er prueft, was **nicht im Repository steht** — die
 Einstellungen beim Anbieter. Genau dort war beim Livegang der Fehler.
 
