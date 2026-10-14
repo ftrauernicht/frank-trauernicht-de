@@ -5,13 +5,9 @@ import { spawnSync } from 'node:child_process';
 // Jede Ausnahme braucht Grund und Datum. Entfaellt, sobald es ein Patch gibt:
 // dann bricht der Lauf ab, weil `npm audit fix` den Fund beheben kann.
 const AUSNAHMEN = {
-  'GHSA-ch52-4w7c-c8xp': {
-    paket: 'http-cache-semantics',
-    seit: '2026-10-03',
-    grund:
-      'Kein Patch verfuegbar (betroffen bis einschliesslich 4.2.0). Kommt nur ueber astro zur Bauzeit; ' +
-      'die Seite ruft keine fremden Adressen ab und hat keinen gemeinsamen HTTP-Cache.',
-  },
+  // Leer, und das ist der Normalfall. Die Ausnahme fuer http-cache-semantics
+  // (GHSA-ch52-4w7c-c8xp, seit 2026-10-03) ist am 2026-10-14 weggefallen, weil es
+  // einen Patch gibt und `npm audit fix` ihn eingespielt hat.
 };
 
 const lauf = spawnSync('npm audit --json', { encoding: 'utf8', shell: true, maxBuffer: 64 * 1024 * 1024 });
