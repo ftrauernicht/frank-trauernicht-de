@@ -112,7 +112,7 @@ export const en: Content = {
       paragraphs: [
         'After my Abitur — the German university-entrance qualification — I deliberately chose a three-year apprenticeship over a degree. I wanted to be able to do things rather than hear about them for years, and little has changed: what I need, I learn on the thing itself.',
         'I have trained apprentices almost continuously ever since: more than twelve of them over the years, several finishing top of their year and honoured at the graduation ceremony in Leer. Of everything I have done professionally, that is the part with the longest half-life.',
-        'It goes back out where it fits. A fork of exam material for the German software developer qualification has grown into a body of material of my own: chapters, diagrams, exam questions and cheat sheets, in German and English. Alongside it, three project-based courses for people who are just starting, in JavaScript, C# and Java.',
+        'It goes back out where it fits. A fork of exam material for the German software developer qualification has grown into a body of material of my own: chapters, diagrams, exam questions and cheat sheets, in German and English. Alongside it, three project-based courses for people who are just starting, in JavaScript, C# and Java. For the step after those, a C# exercise package: twelve tasks that rebuild the classes one otherwise just trusts.',
       ],
     },
   ],
@@ -171,6 +171,11 @@ export const en: Content = {
         name: 'java-games-course',
         url: 'https://github.com/ftrauernicht/java-games-course',
         text: 'Project-based Java course built around seven games, from tic-tac-toe to Flappy Bird. In German and English, nothing installed but the JDK, and every course depends on the first one alone — which CI enforces with a separate compile run per course.',
+      },
+      {
+        name: 'csharp-deep-dive-exercises',
+        url: 'https://github.com/ftrauernicht/csharp-deep-dive-exercises',
+        text: 'Twelve C# exercises around an animal shelter, for people who already know classes and inheritance: equality and hash codes, a hash table built by hand, LINQ and deferred execution. In German and English, with a complete sample solution and 240 tests in CI.',
       },
       {
         name: 'raspi-google-drive-sync',

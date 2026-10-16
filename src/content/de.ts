@@ -112,7 +112,7 @@ export const de: Content = {
       paragraphs: [
         'Nach dem Abitur habe ich mich bewusst gegen ein Studium entschieden und eine dreijährige Ausbildung gemacht. Ich wollte Dinge können, nicht jahrelang über sie hören. Daran hat sich wenig geändert: Was ich brauche, lerne ich am Gegenstand.',
         'Ausgebildet habe ich seither fast durchgehend selbst: über zwölf Auszubildende in den vergangenen Jahren, mehrere von ihnen Jahrgangsbeste und bei der Freisprechung in Leer ausgezeichnet. Von den Dingen, die ich beruflich gemacht habe, ist das der Teil, der am längsten nachwirkt.',
-        'Zurück geht es dahin, wo es passt. Aus einem Fork mit Prüfungsmaterial für die Fachinformatiker Anwendungsentwicklung ist bei mir eine eigene Themensammlung geworden: Kapitel, Diagramme, Prüfungsfragen und Spickzettel, deutsch und englisch. Dazu drei projektbasierte Kurse für Leute, die gerade anfangen, in JavaScript, C# und Java.',
+        'Zurück geht es dahin, wo es passt. Aus einem Fork mit Prüfungsmaterial für die Fachinformatiker Anwendungsentwicklung ist bei mir eine eigene Themensammlung geworden: Kapitel, Diagramme, Prüfungsfragen und Spickzettel, deutsch und englisch. Dazu drei projektbasierte Kurse für Leute, die gerade anfangen, in JavaScript, C# und Java. Für die Stufe danach ein Übungspaket in C#, in dem zwölf Aufgaben die Klassen nachbauen lassen, auf die man sich sonst blind verlässt.',
       ],
     },
   ],
@@ -171,6 +171,11 @@ export const de: Content = {
         name: 'java-games-course',
         url: 'https://github.com/ftrauernicht/java-games-course',
         text: 'Projektbasierter Java-Kurs entlang von sieben Spielen, von Tic Tac Toe bis Flappy Bird. Deutsch und englisch, installiert wird nichts außer dem JDK, und jeder Kurs setzt allein den ersten voraus — was die CI pro Kurs mit einem eigenen Übersetzungslauf erzwingt.',
+      },
+      {
+        name: 'csharp-deep-dive-exercises',
+        url: 'https://github.com/ftrauernicht/csharp-deep-dive-exercises',
+        text: 'Zwölf C#-Übungen um ein Tierheim, für Leute, die Klassen und Vererbung schon können: Gleichheit und Hashcodes, ein von Hand gebautes Dictionary mit Körben, LINQ und verzögerte Ausführung. Deutsch und englisch, mit vollständiger Musterlösung und 240 Tests in der CI.',
       },
       {
         name: 'raspi-google-drive-sync',
