@@ -184,6 +184,21 @@ Einstellungen beim Anbieter. Genau dort war beim Livegang der Fehler.
 Actions sind auf Commit-SHA gepinnt, Dependabot hebt sie samt Kommentar an.
 **SHAs nie raten**, immer aus der API holen.
 
+## Änderungen laufen über Pull Requests
+
+`main` ist geschützt, und zwar auch gegen dich selbst: kein direkter Push, auch
+nicht als Admin. Jede Änderung geht über einen Pull Request, `build` und `audit`
+müssen grün sein, und der Branch muss den Stand von `main` enthalten.
+
+Eine Freigabe verlangt der Schutz **nicht**. In einem Ein-Personen-Repo wäre die
+Pflicht-Freigabe ein Klick auf die eigene Arbeit und kein Vier-Augen-Prinzip. Was
+zählt, sind die Prüfungen.
+
+Dependabot-Updates fasst `.github/dependabot.yml` unter dem Gruppennamen `safe`
+zusammen, und `.github/workflows/dependabot-auto-merge.yml` merged diese Gruppe,
+sobald jede Prüfung auf dem Commit grün ist. Offen bleibt nur, was eine
+Entscheidung braucht: eine neue Hauptversion oder ein roter Lauf.
+
 ## Texte ändern
 
 Sämtlicher Fließtext liegt in `src/content/de.ts` und `src/content/en.ts`. Die Seiten
