@@ -1,3 +1,8 @@
+# Patch- und Minor-Updates reisen als ein einziger Pull Request statt als einer je
+# Paket. Der Gruppenname landet im Branch, und .github/workflows/dependabot-auto-merge.yml
+# merged einen Branch mit diesem Namen, sobald jede Pruefung darauf gruen ist. Ein Major
+# gehoert zu keiner Gruppe, kommt allein an und bleibt offen — und genau das soll er, denn
+# dort aendert sich das Verhalten, nicht nur die Versionsnummer.
 version: 2
 updates:
   - package-ecosystem: npm
@@ -8,6 +13,10 @@ updates:
     open-pull-requests-limit: 5
     commit-message:
       prefix: chore
+    groups:
+      safe:
+        update-types: ["minor", "patch"]
+
   # Die Actions sind auf Commit-SHA gepinnt. Dependabot hebt den SHA und den
   # Kommentar dahinter gemeinsam an — genau deshalb ist das Pinnen wartbar.
   - package-ecosystem: github-actions
@@ -16,3 +25,6 @@ updates:
       interval: monthly
     commit-message:
       prefix: ci
+    groups:
+      safe:
+        update-types: ["minor", "patch"]
