@@ -42,7 +42,7 @@ export const en: Content = {
       ],
       listIntro: 'Some of it, without names:',
       list: [
-        'Processing millions of vessel position reports per day: reconstructing routes, detecting movement patterns.',
+        'Processing four to five million vessel position reports a month: reconstructing routes, detecting movement patterns.',
         'Incident reporting for events on board, from capture through to the delivered report.',
         'A document management system.',
         'An insurance line-of-business system handling case files and cost overviews.',
