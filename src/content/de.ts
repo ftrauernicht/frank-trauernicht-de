@@ -42,7 +42,7 @@ export const de: Content = {
       ],
       listIntro: 'Einiges davon, ohne Namen:',
       list: [
-        'Auswertung von Millionen Positionsmeldungen aus dem Schiffsverkehr pro Tag: Routen rekonstruieren, Bewegungsmuster erkennen.',
+        'Auswertung von vier bis fünf Millionen Positionsmeldungen aus dem Schiffsverkehr im Monat: Routen rekonstruieren, Bewegungsmuster erkennen.',
         'Meldewesen für Vorfälle an Bord, von der Erfassung bis zum ausgelieferten Bericht.',
         'Ein Dokumentenmanagementsystem.',
         'Ein Versicherungsfachverfahren mit Fallakten und Kostenübersichten.',
